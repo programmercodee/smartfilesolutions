@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const menuItems = [
   { label: 'INCOME TAX FILING', link: '/income-tax-filing' },
@@ -40,6 +41,7 @@ function Navbar() {
   const [openDropdown, setOpenDropdown] = useState(null);
   const dropdownTimeout = React.useRef();
   const [isTouch, setIsTouch] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     // Detect if device is touch or not
@@ -71,17 +73,20 @@ function Navbar() {
         <div className="flex justify-between h-20 items-center">
           {/* Logo */}
           <a href="/" className="">
-            <img src="/logo_no_bg.png" alt="Logo" className="h-34 w-34 object-contain" />
+            <img src="/logo_no_bg.png" alt="Logo" className="rounded-md w-35 object-contain transition-transform duration-300 hover:scale-104 hover:shadow-lg" />
           </a>
 
           {/* Desktop Menu */}
           <div className="hidden xl:flex space-x-8 items-center">
-            {menuItems.map((item, idx) =>
-              !item.submenu ? (
+            {menuItems.map((item, idx) => {
+              // Determine if this item or any of its submenu is active
+              const isActive = item.link && location.pathname === item.link;
+              const isSubActive = item.submenu && item.submenu.some(sub => location.pathname === sub.link);
+              return !item.submenu ? (
                 <a
                   key={item.label}
                   href={item.link}
-                  className="text-gray-700 hover:text-sky-600 font-medium transition-colors duration-200"
+                  className={`text-gray-700 hover:text-sky-600 font-medium transition-all duration-300 ${isActive ? 'text-sky-600 font-bold underline underline-offset-4' : ''}`}
                 >
                   {item.label}
                 </a>
@@ -93,7 +98,7 @@ function Navbar() {
                   onMouseLeave={!isTouch ? handleDropdownLeave : undefined}
                 >
                   <button
-                    className="flex items-center text-gray-700 hover:text-sky-600 font-medium transition-colors duration-200 focus:outline-none"
+                    className={`flex items-center text-gray-700 hover:text-sky-600 font-medium transition-all duration-300 focus:outline-none ${isSubActive ? 'text-sky-600 font-bold underline underline-offset-4' : ''}`}
                     type="button"
                     onClick={isTouch ? () => handleDropdownClick(idx) : undefined}
                   >
@@ -110,22 +115,25 @@ function Navbar() {
                   </button>
                   {/* Dropdown */}
                   <div
-                    className={`absolute left-0 mt-2 w-48 bg-white border rounded shadow-lg z-10 transition-all duration-300 transform ${openDropdown === idx ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}
+                    className={`absolute left-0 mt-2 w-48 bg-white border rounded shadow-lg z-10 transition-all duration-300 transform ${openDropdown === idx ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'}`}
                     style={{ minWidth: '12rem' }}
                   >
-                    {item.submenu.map((sub, subIdx) => (
-                      <a
-                        key={sub.label}
-                        href={sub.link}
-                        className="block px-4 py-2 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition-colors duration-200"
-                      >
-                        {sub.label}
-                      </a>
-                    ))}
+                    {item.submenu.map((sub, subIdx) => {
+                      const isSubLinkActive = location.pathname === sub.link;
+                      return (
+                        <a
+                          key={sub.label}
+                          href={sub.link}
+                          className={`block px-4 py-2 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition-all duration-300 ${isSubLinkActive ? 'text-sky-600 font-bold underline underline-offset-4' : ''}`}
+                        >
+                          {sub.label}
+                        </a>
+                      );
+                    })}
                   </div>
                 </div>
-              )
-            )}
+              );
+            })}
           </div>
 
           {/* Mobile Hamburger */}
