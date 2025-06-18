@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer/footer';
+import Home from './components/Home/home';
 
 function Placeholder({ text }) {
   return <div className="p-8 text-center text-xl">{text}</div>;
@@ -39,7 +40,7 @@ function App() {
         <Route path="/support/contact" element={<Placeholder text="CONTACT US" />} />
         <Route path="/support/faq" element={<Placeholder text="FAQ" />} />
         {/* Home route */}
-        <Route path="/" element={<Placeholder text="HOME" />} />
+        <Route path="/" element={<Home/>} />
       </Routes>
       <Footer/>
     </>
