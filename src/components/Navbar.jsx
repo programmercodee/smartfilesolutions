@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 
 const menuItems = [
   { label: 'INCOME TAX FILING', link: '/income-tax-filing' },
@@ -7,17 +7,37 @@ const menuItems = [
   {
     label: 'POPULAR SERVICES',
     submenu: [
-      { label: 'Service 1', link: '/popular/service1' },
-      { label: 'Service 2', link: '/popular/service2' },
-      { label: 'Service 3', link: '/popular/service3' },
+      { label: 'ITR FILING SERVICES', link: '/popular/service1' },
+      { label: 'ISO CERTIFICATION', link: '/popular/service2' },
+      { label: 'GST REGISTRATION', link: '/popular/service3' },
+      { label: 'GST RETURN FILING', link: '/popular/service4' },
+      { label: 'MSME REGISTRATION', link: '/popular/service5' },
+      { label: 'COMPANY REGISTRATION', link: '/popular/service6' },
+      { label: 'FIRM REGISTRATION', link: '/popular/service7' },
+      { label: 'FSSAI LICENSE', link: '/popular/service8' },
+      { label: 'Trademark Registration', link: '/popular/service9' },
     ],
   },
   {
     label: 'BUSINESS REGISTRATION',
     submenu: [
-      { label: 'LLP Registration', link: '/business/llp' },
-      { label: 'Private Ltd', link: '/business/private-ltd' },
-      { label: 'OPC', link: '/business/opc' },
+      {
+        label: 'Company registration',
+        link: '/business/llp',
+        submenu: [
+          { label: 'Private Limited', link: '/business/llp/private-ltd' },
+          { label: 'Public Limited', link: '/business/llp/public-ltd' },
+        ],
+      },
+      {
+        label: 'Firm registration',
+        link: '/business/private-ltd',
+        submenu: [
+          { label: 'Private Limited', link: '/business/private-ltd/private-ltd' },
+          { label: 'Public Limited', link: '/business/private-ltd/public-ltd' },
+        ],
+      },
+      // { label: 'Firm registration', link: '/business/private-ltd' },
     ],
   },
   {
@@ -39,6 +59,9 @@ const menuItems = [
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
+  const [openSubDropdown, setOpenSubDropdown] = useState(null);
+  const [mobileOpenDropdown, setMobileOpenDropdown] = useState(null);
+  const [mobileOpenSubDropdown, setMobileOpenSubDropdown] = useState(null);
   const dropdownTimeout = React.useRef();
   const [isTouch, setIsTouch] = useState(false);
   const location = useLocation();
@@ -72,9 +95,9 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           {/* Logo */}
-          <a href="/" className="">
+          <Link to="/" className="">
             <img src="/logo_no_bg.png" alt="Logo" className="rounded-md w-35 object-contain transition-transform duration-300 hover:scale-104 hover:shadow-lg" />
-          </a>
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden xl:flex space-x-8 items-center">
@@ -83,22 +106,22 @@ function Navbar() {
               const isActive = item.link && location.pathname === item.link;
               const isSubActive = item.submenu && item.submenu.some(sub => location.pathname === sub.link);
               return !item.submenu ? (
-                <a
+                <Link
                   key={item.label}
-                  href={item.link}
-                  className={`text-gray-700 hover:text-sky-600 font-medium transition-all duration-300 ${isActive ? 'text-sky-600 font-bold underline underline-offset-4' : ''}`}
+                  to={item.link}
+                  className={`text-gray-700 text-base hover:text-sky-600 font-medium transition-all duration-300 uppercase ${isActive ? 'text-sky-600 font-bold underline underline-offset-4' : ''}`}
                 >
                   {item.label}
-                </a>
+                </Link>
               ) : (
                 <div
                   key={item.label}
                   className="relative group"
-                  onMouseEnter={!isTouch ? () => handleDropdownEnter(idx) : undefined}
-                  onMouseLeave={!isTouch ? handleDropdownLeave : undefined}
+                  onMouseEnter={!isTouch ? () => { handleDropdownEnter(idx); setOpenSubDropdown(null); } : undefined}
+                  onMouseLeave={!isTouch ? () => { handleDropdownLeave(); setOpenSubDropdown(null); } : undefined}
                 >
                   <button
-                    className={`flex items-center text-gray-700 hover:text-sky-600 font-medium transition-all duration-300 focus:outline-none ${isSubActive ? 'text-sky-600 font-bold underline underline-offset-4' : ''}`}
+                    className={`flex items-center text-gray-700 hover:text-sky-600 font-medium transition-all duration-300 focus:outline-none uppercase ${isSubActive ? 'text-sky-600 font-bold underline underline-offset-4' : ''}`}
                     type="button"
                     onClick={isTouch ? () => handleDropdownClick(idx) : undefined}
                   >
@@ -113,21 +136,60 @@ function Navbar() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
-                  {/* Dropdown */}
+                  {/* First-level Dropdown */}
                   <div
-                    className={`absolute left-0 mt-2 w-48 bg-white border rounded shadow-lg z-10 transition-all duration-300 transform ${openDropdown === idx ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'}`}
+                    className={`absolute left-0 mt-2 w-52 bg-white border rounded shadow-lg z-10 transition-all duration-300 text-sm transform ${openDropdown === idx ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'}`}
                     style={{ minWidth: '12rem' }}
                   >
                     {item.submenu.map((sub, subIdx) => {
                       const isSubLinkActive = location.pathname === sub.link;
+                      const isLast = subIdx === item.submenu.length - 1;
+                      // If this submenu has its own submenu, render a flyout
+                      if (sub.submenu) {
+                        return (
+                          <div
+                            key={sub.label}
+                            className="relative group"
+                            onMouseEnter={!isTouch ? () => setOpenSubDropdown(subIdx) : undefined}
+                            onMouseLeave={!isTouch ? () => setOpenSubDropdown(null) : undefined}
+                          >
+                            <Link
+                              to={sub.link}
+                              className={`block px-4 py-2 text-base text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition-all duration-300 uppercase ${isSubLinkActive ? 'text-sky-600 font-bold underline underline-offset-4' : ''} ${!isLast ? 'border-b border-gray-200' : ''}`}
+                            >
+                              {sub.label}
+                              <svg className="ml-2 w-3 h-3 inline-block transform transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                              </svg>
+                            </Link>
+                            {/* Second-level Dropdown */}
+                            <div className={`absolute left-full text-sm top-0 mt-0 w-54 bg-white border rounded shadow-lg z-20 transition-all duration-300 ${openSubDropdown === subIdx ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+                              {sub.submenu.map((subsub, subsubIdx) => {
+                                const isSubSubLinkActive = location.pathname === subsub.link;
+                                const isSubSubLast = subsubIdx === sub.submenu.length - 1;
+                                return (
+                                  <Link
+                                    key={subsub.label}
+                                    to={subsub.link}
+                                    className={`block px-4 py-2 text-base text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition-all duration-300 uppercase ${isSubSubLinkActive ? 'text-sky-600 font-bold underline underline-offset-4' : ''} ${!isSubSubLast ? 'border-b border-gray-200' : ''}`}
+                                  >
+                                    {subsub.label}
+                                  </Link>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        );
+                      }
+                      // Otherwise, render as normal
                       return (
-                        <a
+                        <Link
                           key={sub.label}
-                          href={sub.link}
-                          className={`block px-4 py-2 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition-all duration-300 ${isSubLinkActive ? 'text-sky-600 font-bold underline underline-offset-4' : ''}`}
+                          to={sub.link}
+                          className={`block px-4 py-2 text-base text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition-all duration-300 uppercase ${isSubLinkActive ? 'text-sky-600 font-bold underline underline-offset-4' : ''} ${!isLast ? 'border-b border-gray-200' : ''}`}
                         >
                           {sub.label}
-                        </a>
+                        </Link>
                       );
                     })}
                   </div>
@@ -156,24 +218,26 @@ function Navbar() {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="xl:hidden bg-white shadow-lg px-4 pt-2 pb-4 space-y-2">
-          {menuItems.map((item, idx) =>
-            !item.submenu ? (
-              <a
+          {menuItems.map((item, idx) => {
+            const isActive = item.link && location.pathname === item.link;
+            const isSubActive = item.submenu && item.submenu.some(sub => location.pathname === sub.link || (sub.submenu && sub.submenu.some(subsub => location.pathname === subsub.link)));
+            return !item.submenu ? (
+              <Link
                 key={item.label}
-                href={item.link}
-                className="block text-gray-700 py-2 px-2 rounded hover:bg-sky-50 hover:text-sky-600 font-medium transition-colors duration-200"
+                to={item.link}
+                className={`block text-gray-700 text-base py-2 px-2 rounded hover:bg-sky-50 hover:text-sky-600 font-medium transition-colors duration-200 uppercase ${isActive ? 'text-sky-600 font-bold underline underline-offset-4' : ''}`}
               >
                 {item.label}
-              </a>
+              </Link>
             ) : (
               <div key={item.label}>
                 <button
-                  onClick={() => setOpenDropdown(openDropdown === idx ? null : idx)}
-                  className="flex items-center w-full text-gray-700 py-2 px-2 rounded hover:bg-sky-50 hover:text-sky-600 font-medium transition-colors duration-200 focus:outline-none"
+                  onClick={() => setMobileOpenDropdown(mobileOpenDropdown === idx ? null : idx)}
+                  className={`flex items-center w-full text-gray-700 text-base py-2 px-2 rounded hover:bg-sky-50 hover:text-sky-600 font-medium transition-colors duration-200 focus:outline-none uppercase ${isSubActive ? 'text-sky-600 font-bold underline underline-offset-4' : ''}`}
                 >
                   {item.label}
                   <svg
-                    className={`ml-1 w-4 h-4 transform transition-transform duration-300 ${openDropdown === idx ? 'rotate-180' : ''}`}
+                    className={`ml-1 w-4 h-4 transform transition-transform duration-300 ${mobileOpenDropdown === idx ? 'rotate-180' : ''}`}
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
@@ -182,22 +246,63 @@ function Navbar() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
-                {openDropdown === idx && (
+                {mobileOpenDropdown === idx && (
                   <div className="pl-4">
-                    {item.submenu.map((sub) => (
-                      <a
-                        key={sub.label}
-                        href={sub.link}
-                        className="block py-2 px-2 text-gray-700 rounded hover:bg-sky-100 hover:text-sky-600 transition-colors duration-200"
-                      >
-                        {sub.label}
-                      </a>
-                    ))}
+                    {item.submenu.map((sub, subIdx) => {
+                      const isSubLinkActive = location.pathname === sub.link;
+                      const isSubSubActive = sub.submenu && sub.submenu.some(subsub => location.pathname === subsub.link);
+                      if (sub.submenu) {
+                        return (
+                          <div key={sub.label}>
+                            <button
+                              onClick={() => setMobileOpenSubDropdown(mobileOpenSubDropdown === subIdx ? null : subIdx)}
+                              className={`flex items-center w-full text-gray-700 text-base py-2 px-2 rounded hover:bg-sky-100 hover:text-sky-600 transition-colors duration-200 focus:outline-none uppercase ${isSubLinkActive || isSubSubActive ? 'text-sky-600 font-bold underline underline-offset-4' : ''}`}
+                            >
+                              {sub.label}
+                              <svg
+                                className={`ml-1 w-4 h-4 transform transition-transform duration-300 ${mobileOpenSubDropdown === subIdx ? 'rotate-180' : ''}`}
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                viewBox="0 0 24 24"
+                              >
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                              </svg>
+                            </button>
+                            {mobileOpenSubDropdown === subIdx && (
+                              <div className="pl-4">
+                                {sub.submenu.map((subsub, subsubIdx) => {
+                                  const isSubSubLinkActive = location.pathname === subsub.link;
+                                  return (
+                                    <Link
+                                      key={subsub.label}
+                                      to={subsub.link}
+                                      className={`block py-2 px-2 text-base text-gray-700 rounded hover:bg-sky-100 hover:text-sky-600 transition-colors duration-200 uppercase ${isSubSubLinkActive ? 'text-sky-600 font-bold underline underline-offset-4' : ''}`}
+                                    >
+                                      {subsub.label}
+                                    </Link>
+                                  );
+                                })}
+                              </div>
+                            )}
+                          </div>
+                        );
+                      }
+                      return (
+                        <Link
+                          key={sub.label}
+                          to={sub.link}
+                          className={`block py-2 px-2 text-base text-gray-700 rounded hover:bg-sky-100 hover:text-sky-600 transition-colors duration-200 uppercase ${isSubLinkActive ? 'text-sky-600 font-bold underline underline-offset-4' : ''}`}
+                        >
+                          {sub.label}
+                        </Link>
+                      );
+                    })}
                   </div>
                 )}
               </div>
-            )
-          )}
+            );
+          })}
         </div>
       )}
     </nav>
