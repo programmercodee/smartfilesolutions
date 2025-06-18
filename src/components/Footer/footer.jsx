@@ -48,16 +48,16 @@ const footerLinks = [
 
 const supportLinks = [
   { label: 'Contact Us', to: '/support/contact' },
-  { label: 'Download the App', to: '/support/download-app' },
-  { label: 'Payment Checkout', to: '/support/payment' },
-  { label: 'Blog Guide', to: '/support/blog' },
+  // { label: 'Download the App', to: '/support/download-app' },
+  // { label: 'Payment Checkout', to: '/support/payment' },
+  // { label: 'Blog Guide', to: '/support/blog' },
 ];
 const companyLinks = [
   { label: 'About Us', to: '/company/about' },
-  { label: 'Join Us : Hiring', to: '/company/hiring' },
+  // { label: 'Join Us : Hiring', to: '/company/hiring' },
   { label: 'Reviews', to: '/company/reviews' },
-  { label: 'Affiliate Programme', to: '/company/affiliate' },
-  { label: 'MyOnlineCA Franchise Partner', to: '/company/franchise' },
+  // { label: 'Affiliate Programme', to: '/company/affiliate' },
+  // { label: 'MyOnlineCA Franchise Partner', to: '/company/franchise' },
 ];
 const legalLinks = [
   { label: 'Terms of Use', to: '/legal/terms' },
@@ -118,7 +118,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* Column 1: All Registration/Service Links in one list */}
         <div className="lg:col-span-2">
-          <h3 className="font-bold mb-6 text-base md:text-lg uppercase tracking-wide">REGISTRATION & SERVICES</h3>
+          {/* <h3 className="font-bold mb-6 text-base md:text-lg uppercase tracking-wide">REGISTRATION & SERVICES</h3> */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10">
             {footerLinks.map((section, idx) => (
               <div key={section.title} className={idx !== 0 ? 'mt-6' : ''}>
@@ -192,11 +192,10 @@ const Footer = () => {
           <div className="bg-neutral-800/60 rounded-lg p-4 shadow-inner mt-2">
             <h3 className="font-bold mb-2 text-base uppercase tracking-wide text-sky-400">ABOUT US</h3>
             <div className="text-neutral-300 text-xs leading-relaxed mb-2">
-              MyOnlineCA is India's fastest growing "Legal Service Provider Company" attempting to provide better legal solutions via technology and reduce the cost via automation.<br /><br />
-              We help you to register your business anywhere in India to manage legal compliance at your fingertips. Best Legal Service Provider Company rating of 4.8/5 based on 1000+ social reviews.<br /><br />
-              <span className="block mt-2">Startup Recognition : <span className="text-sky-400">DIPP9122</span></span>
-              <span>CIN : <span className="text-sky-400">U74140RJ2015PTC048757</span></span><br />
-              <span>GSTIN : <span className="text-sky-400">08AAKCM0506E1ZT</span></span>
+              Smart File Solutions is one of India’s fastest-growing legal service providers, dedicated to offering efficient and affordable legal solutions through the power of technology and automation.<br /><br /> We help you register your business anywhere in India and manage all your legal compliances with ease. With a stellar 4.8/5 rating based on 1000+ reviews across social platforms, Smart File Solutions is recognized as a top-rated legal service provider company.<br /><br />
+              {/* <span className="block mt-2">Startup Recognition : <span className="text-sky-400"></span></span>
+              <span>CIN : <span className="text-sky-400"></span></span><br />
+              <span>GSTIN : <span className="text-sky-400"></span></span> */}
             </div>
           </div>
           {/* WE SECURELY ACCEPT section below About Us */}
@@ -226,7 +225,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="text-center text-neutral-400 text-xs mt-8 border-t border-neutral-800 pt-4">
-        © 2015 - 2025 | SmartFileSolutions Private Limited. | All Rights Reserved with Copyright
+        © 2020 - 2025 | SmartFileSolutions Private Limited. | All Rights Reserved with Copyright
       </div>
     </footer>
   );

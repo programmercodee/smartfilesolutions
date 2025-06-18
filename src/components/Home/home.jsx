@@ -1,23 +1,32 @@
 import React, { useState } from 'react';
+import {
+  FaBuilding,
+  FaDownload,
+  FaCalculator,
+  FaCalendarAlt,
+  FaCheckCircle,
+  FaCheck,
+  FaStar
+} from 'react-icons/fa';
 
 const services = [
   {
     icon: (
-      <svg className="w-8 h-8 text-sky-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 17v-2a4 4 0 0 1 8 0v2M5 21h14a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2z" /></svg>
+      <FaBuilding className="w-8 h-8 text-sky-500" />
     ),
     title: 'Business Registration',
     desc: 'Company, LLP, GST, MSME, FSSAI, Trademark & more.'
   },
   {
     icon: (
-      <svg className="w-8 h-8 text-sky-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M8 17l4 4 4-4m0-5V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v9m12 4a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" /></svg>
+      <FaDownload className="w-8 h-8 text-sky-500" />
     ),
     title: 'Tax Filing & Consultancy',
     desc: 'Income Tax, GST Returns, Annual Filings, Audit & more.'
   },
   {
     icon: (
-      <svg className="w-8 h-8 text-sky-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3zm0 0V4m0 8v8m8-8a8 8 0 1 1-16 0 8 8 0 0 1 16 0z" /></svg>
+      <FaCalculator className="w-8 h-8 text-sky-500" />
     ),
     title: 'Accounting & Bookkeeping',
     desc: 'Professional accounting, payroll, and compliance.'
@@ -146,7 +155,7 @@ const Home = () => {
             </button>
           </div>
           <div className="flex-1 flex justify-center">
-            <img src="https://img.freepik.com/free-vector/finance-consultant-concept-illustration_114360-2580.jpg?w=700" alt="Accounting Illustration" className="w-full max-w-xs md:max-w-md rounded-xl shadow-lg" />
+            <img src="/og_logo.png" alt="Accounting Illustration" className="w-full max-w-xs md:max-w-md rounded-xl shadow-lg" />
           </div>
         </div>
       </section>
@@ -184,20 +193,133 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section className="bg-neutral-50 py-12 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-neutral-800 text-center mb-4">What Our Clients Say</h2>
+          <p className="text-neutral-600 text-center mb-8 max-w-2xl mx-auto">Don't just take our word for it. Here's what our satisfied clients have to say about our services.</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {/* Testimonial 1 */}
+            <div className="bg-white rounded-xl shadow-lg p-6 md:p-8">
+              <div className="flex items-center mb-4">
+                <div className="flex text-yellow-400">
+                  {[...Array(5)].map((_, i) => (
+                    <FaStar key={i} className="w-5 h-5 fill-current" />
+                  ))}
+                </div>
+              </div>
+              <p className="text-neutral-700 mb-6 italic">"Excellent service! They helped me register my company and get GST registration done within 15 days. The team is very professional and responsive. Highly recommended for any business registration needs."</p>
+              <div className="flex items-center">
+                <div className="w-12 h-12 bg-sky-100 rounded-full flex items-center justify-center mr-4">
+                  <span className="text-sky-600 font-semibold text-lg">RK</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-neutral-900">Rajesh Kumar</h4>
+                  <p className="text-sm text-neutral-600">Startup Founder, Mumbai</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Testimonial 2 */}
+            <div className="bg-white rounded-xl shadow-lg p-6 md:p-8">
+              <div className="flex items-center mb-4">
+                <div className="flex text-yellow-400">
+                  {[...Array(5)].map((_, i) => (
+                    <FaStar key={i} className="w-5 h-5 fill-current" />
+                  ))}
+                </div>
+              </div>
+              <p className="text-neutral-700 mb-6 italic">"I was struggling with GST filing for months. This team took over and made everything so simple. They're very knowledgeable about tax laws and always available to answer questions. Great value for money!"</p>
+              <div className="flex items-center">
+                <div className="w-12 h-12 bg-sky-100 rounded-full flex items-center justify-center mr-4">
+                  <span className="text-sky-600 font-semibold text-lg">SP</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-neutral-900">Sunita Patel</h4>
+                  <p className="text-sm text-neutral-600">Restaurant Owner, Delhi</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Testimonial 3 */}
+            <div className="bg-white rounded-xl shadow-lg p-6 md:p-8">
+              <div className="flex items-center mb-4">
+                <div className="flex text-yellow-400">
+                  {[...Array(5)].map((_, i) => (
+                    <FaStar key={i} className="w-5 h-5 fill-current" />
+                  ))}
+                </div>
+              </div>
+              <p className="text-neutral-700 mb-6 italic">"Outstanding accounting services! They handle all our bookkeeping, payroll, and tax filings efficiently. The team is proactive and keeps us updated on all compliance requirements. Highly professional!"</p>
+              <div className="flex items-center">
+                <div className="w-12 h-12 bg-sky-100 rounded-full flex items-center justify-center mr-4">
+                  <span className="text-sky-600 font-semibold text-lg">AM</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-neutral-900">Amit Mehta</h4>
+                  <p className="text-sm text-neutral-600">IT Company CEO, Bangalore</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Money Back Guarantee Section */}
+      <section className="bg-white py-12 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+            <div className="flex-1 text-center lg:text-left">
+              <div className="flex items-center justify-center lg:justify-start mb-4">
+                <div className="bg-green-100 p-3 rounded-full mr-4">
+                  <FaCheckCircle className="w-8 h-8 text-green-600" />
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold text-neutral-900">100% Money Back Guarantee*</h2>
+              </div>
+              <p className="text-neutral-700 text-base md:text-lg leading-relaxed">
+                At Smart File Solutions, client satisfaction is our top priority. That's why every customer who avails our services is fully covered under our 100% Money Back Guarantee Program*. If we are unable to deliver your final, legally approved certification, you're eligible for a full refund — no questions asked. For complete details, please refer to our Refund Policy section.
+              </p>
+              <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                <div className="flex items-center text-sm text-neutral-600">
+                  <FaCheck className="w-5 h-5 text-green-500 mr-2" />
+                  No Questions Asked Refund
+                </div>
+                <div className="flex items-center text-sm text-neutral-600">
+                  <FaCheck className="w-5 h-5 text-green-500 mr-2" />
+                  Full Money Back Guarantee
+                </div>
+                <div className="flex items-center text-sm text-neutral-600">
+                  <FaCheck className="w-5 h-5 text-green-500 mr-2" />
+                  Risk-Free Service
+                </div>
+              </div>
+            </div>
+            <div className="flex-1 flex justify-center">
+              <img
+                src="https://img.freepik.com/free-vector/guarantee-concept-illustration_114360-3637.jpg?w=700"
+                alt="100% Money Back Guarantee"
+                className="w-full max-w-sm md:max-w-md rounded-xl shadow-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Consultation Form Section */}
-      <section id="consultation-form" className="bg-sky-50 py-12 px-4">
-        <div className="max-w-xl mx-auto bg-white rounded-2xl shadow-lg p-8 md:p-10">
+      <section id="consultation-form" className="bg-sky-50 py-8 md:py-12 px-4">
+        <div className="max-w-xl mx-auto bg-white rounded-2xl shadow-lg p-6 md:p-8 lg:p-10">
           <h2 className="text-2xl md:text-3xl font-bold text-center text-sky-600 mb-2 flex items-center justify-center gap-2">
-            <svg className="w-6 h-6 text-sky-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10m-9 4h6m-7 6h8a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2z" /></svg>
+            <FaCalendarAlt className="w-6 h-6 text-sky-500" />
             Book a Free Consultation
           </h2>
-          <p className="text-center text-neutral-500 mb-6 text-sm">Fill out the form and our expert team will get in touch with you soon.</p>
-          <form className="space-y-5" onSubmit={handleSubmit}>
+          <p className="text-center text-neutral-500 mb-4 md:mb-6 text-sm">Fill out the form and our expert team will get in touch with you soon.</p>
+          <form className="space-y-4 md:space-y-5" onSubmit={handleSubmit}>
             <div>
               <label className="block font-medium text-neutral-700 mb-1">Full Name <span className="text-red-500">*</span></label>
               <input
                 type="text"
-                className="w-full border border-neutral-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-sky-400"
+                className="w-full border border-neutral-300 rounded-lg px-3 md:px-4 py-2 focus:outline-none focus:ring-2 focus:ring-sky-400"
                 placeholder="Your Name"
                 required
                 value={formData.name}
@@ -208,7 +330,7 @@ const Home = () => {
               <label className="block font-medium text-neutral-700 mb-1">Email <span className="text-red-500">*</span></label>
               <input
                 type="email"
-                className="w-full border border-neutral-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-sky-400"
+                className="w-full border border-neutral-300 rounded-lg px-3 md:px-4 py-2 focus:outline-none focus:ring-2 focus:ring-sky-400"
                 placeholder="you@email.com"
                 required
                 value={formData.email}
@@ -219,7 +341,7 @@ const Home = () => {
               <label className="block font-medium text-neutral-700 mb-1">Phone <span className="text-red-500">*</span></label>
               <input
                 type="tel"
-                className="w-full border border-neutral-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-sky-400"
+                className="w-full border border-neutral-300 rounded-lg px-3 md:px-4 py-2 focus:outline-none focus:ring-2 focus:ring-sky-400"
                 placeholder="9876543210"
                 required
                 value={formData.phone}
@@ -228,9 +350,9 @@ const Home = () => {
             </div>
             <div>
               <label className="block font-medium text-neutral-700 mb-1">Service Category <span className="text-red-500">*</span></label>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 md:gap-2">
                 {['Company Registration', 'GST Related', 'Income Tax Return', 'MSME/Udyog Aadhaar', 'Trademark Registration', 'Food License/FSSAI', 'Annual Filing Pvt Ltd/LLP', 'Others'].map((cat) => (
-                  <label key={cat} className="flex items-center gap-2 bg-neutral-50 border border-neutral-200 rounded px-3 py-2 cursor-pointer hover:border-sky-400 transition">
+                  <label key={cat} className="flex items-center gap-2 bg-neutral-50 border border-neutral-200 rounded px-2 md:px-3 py-1.5 md:py-2 cursor-pointer hover:border-sky-400 transition">
                     <input
                       type="radio"
                       name="category"
@@ -240,16 +362,16 @@ const Home = () => {
                       checked={category === cat}
                       onChange={() => setCategory(cat)}
                     />
-                    <span className="text-neutral-700 text-sm">{cat}</span>
+                    <span className="text-neutral-700 text-xs md:text-sm">{cat}</span>
                   </label>
                 ))}
               </div>
             </div>
             {/* Conditionally render Type of Company */}
             {category === 'Company Registration' && (
-              <div className="bg-sky-50 p-4 rounded-lg mt-2">
+              <div className="bg-sky-50 p-3 md:p-4 rounded-lg mt-2">
                 <label className="block font-medium text-neutral-700 mb-1">Type of Company <span className="text-red-500">*</span></label>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-1.5 md:gap-2">
                   {['Proprietorship Firm', 'Partnership Firm', 'Pvt Ltd / LLP / OPC'].map((type) => (
                     <label key={type} className="flex items-center gap-2">
                       <input
@@ -261,7 +383,7 @@ const Home = () => {
                         checked={companyType === type}
                         onChange={() => setCompanyType(type)}
                       />
-                      <span className="text-neutral-700 text-sm">{type}</span>
+                      <span className="text-neutral-700 text-xs md:text-sm">{type}</span>
                     </label>
                   ))}
                 </div>
@@ -269,9 +391,9 @@ const Home = () => {
             )}
             {/* Conditionally render GST Type */}
             {category === 'GST Related' && (
-              <div className="bg-sky-50 p-4 rounded-lg mt-2">
+              <div className="bg-sky-50 p-3 md:p-4 rounded-lg mt-2">
                 <label className="block font-medium text-neutral-700 mb-1">GST Service <span className="text-red-500">*</span></label>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-1.5 md:gap-2">
                   {['GST Registration', 'GST Return Filing'].map((type) => (
                     <label key={type} className="flex items-center gap-2">
                       <input

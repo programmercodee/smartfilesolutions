@@ -90,8 +90,16 @@ function Navbar() {
     setOpenDropdown(openDropdown === idx ? null : idx);
   };
 
+  const closeAllMenus = () => {
+    setMenuOpen(false);
+    setOpenDropdown(null);
+    setOpenSubDropdown(null);
+    setMobileOpenDropdown(null);
+    setMobileOpenSubDropdown(null);
+  };
+
   return (
-    <nav className="bg-white shadow-md">
+    <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           {/* Logo */}
@@ -109,6 +117,7 @@ function Navbar() {
                 <Link
                   key={item.label}
                   to={item.link}
+                  onClick={closeAllMenus}
                   className={`text-gray-700 text-base hover:text-sky-600 font-medium transition-all duration-300 uppercase ${isActive ? 'text-sky-600 font-bold underline underline-offset-4' : ''}`}
                 >
                   {item.label}
@@ -155,6 +164,7 @@ function Navbar() {
                           >
                             <Link
                               to={sub.link}
+                              onClick={closeAllMenus}
                               className={`block px-4 py-2 text-base text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition-all duration-300 uppercase ${isSubLinkActive ? 'text-sky-600 font-bold underline underline-offset-4' : ''} ${!isLast ? 'border-b border-gray-200' : ''}`}
                             >
                               {sub.label}
@@ -171,6 +181,7 @@ function Navbar() {
                                   <Link
                                     key={subsub.label}
                                     to={subsub.link}
+                                    onClick={closeAllMenus}
                                     className={`block px-4 py-2 text-base text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition-all duration-300 uppercase ${isSubSubLinkActive ? 'text-sky-600 font-bold underline underline-offset-4' : ''} ${!isSubSubLast ? 'border-b border-gray-200' : ''}`}
                                   >
                                     {subsub.label}
@@ -186,6 +197,7 @@ function Navbar() {
                         <Link
                           key={sub.label}
                           to={sub.link}
+                          onClick={closeAllMenus}
                           className={`block px-4 py-2 text-base text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition-all duration-300 uppercase ${isSubLinkActive ? 'text-sky-600 font-bold underline underline-offset-4' : ''} ${!isLast ? 'border-b border-gray-200' : ''}`}
                         >
                           {sub.label}
@@ -225,6 +237,7 @@ function Navbar() {
               <Link
                 key={item.label}
                 to={item.link}
+                onClick={closeAllMenus}
                 className={`block text-gray-700 text-base py-2 px-2 rounded hover:bg-sky-50 hover:text-sky-600 font-medium transition-colors duration-200 uppercase ${isActive ? 'text-sky-600 font-bold underline underline-offset-4' : ''}`}
               >
                 {item.label}
@@ -277,6 +290,7 @@ function Navbar() {
                                     <Link
                                       key={subsub.label}
                                       to={subsub.link}
+                                      onClick={closeAllMenus}
                                       className={`block py-2 px-2 text-base text-gray-700 rounded hover:bg-sky-100 hover:text-sky-600 transition-colors duration-200 uppercase ${isSubSubLinkActive ? 'text-sky-600 font-bold underline underline-offset-4' : ''}`}
                                     >
                                       {subsub.label}
@@ -292,6 +306,7 @@ function Navbar() {
                         <Link
                           key={sub.label}
                           to={sub.link}
+                          onClick={closeAllMenus}
                           className={`block py-2 px-2 text-base text-gray-700 rounded hover:bg-sky-100 hover:text-sky-600 transition-colors duration-200 uppercase ${isSubLinkActive ? 'text-sky-600 font-bold underline underline-offset-4' : ''}`}
                         >
                           {sub.label}
