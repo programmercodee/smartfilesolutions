@@ -6,7 +6,8 @@ import {
   FaCalendarAlt,
   FaCheckCircle,
   FaCheck,
-  FaStar
+  FaStar,
+  FaFolderOpen
 } from 'react-icons/fa';
 
 const services = [
@@ -155,7 +156,12 @@ const Home = () => {
             </button>
           </div>
           <div className="flex-1 flex justify-center">
-            <img src="/og_logo.png" alt="Accounting Illustration" className="w-full max-w-xs md:max-w-md rounded-xl shadow-lg" />
+            <div className="w-full max-w-sm md:max-w-lg h-60 md:h-80 flex flex-col items-center justify-center rounded-2xl shadow-lg bg-gradient-to-br from-sky-200 via-white to-sky-100 border-2 border-sky-300">
+              <FaFolderOpen className="text-sky-500 w-16 h-16 mb-3" />
+              <span className="text-sky-700 text-2xl sm:text-3xl md:text-5xl font-extrabold tracking-tight text-center drop-shadow font-sans break-words whitespace-normal px-2">
+                SmartFileSolutions
+              </span>
+            </div>
           </div>
         </div>
       </section>
@@ -188,7 +194,7 @@ const Home = () => {
             </ul>
           </div>
           <div className="flex-1 flex justify-center">
-            <img src="https://img.freepik.com/free-vector/handshake-business-partners-cartoon-character_1150-35079.jpg?w=700" alt="Trust Illustration" className="w-full max-w-xs md:max-w-sm rounded-xl shadow" />
+            <img src="https://res.cloudinary.com/defazdfkp/image/upload/v1750308200/ChatGPT_Image_Jun_19_2025_10_12_52_AM_coxihz.png" alt="Trust Illustration" className="w-full max-w-xs md:max-w-sm rounded-xl shadow" />
           </div>
         </div>
       </section>
@@ -302,6 +308,32 @@ const Home = () => {
                 className="w-full max-w-sm md:max-w-md rounded-xl shadow-lg"
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Interactive Tax Calculator Section */}
+      <section className="bg-white py-12 px-4">
+        <div className="max-w-2xl mx-auto rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 lg:p-10">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center text-sky-600 mb-2 flex items-center justify-center gap-2 break-words">
+            <FaCalculator className="w-5 h-5 sm:w-6 sm:h-6 text-sky-500" />
+            <span>Income Tax Calculator (FY 2024-25)</span>
+          </h2>
+          <p className="text-center text-neutral-500 mb-4 md:mb-6 text-xs sm:text-sm">Estimate your income tax liability under the old regime. For demonstration purposes only.</p>
+          <TaxCalculator />
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="bg-sky-50 py-12 px-4">
+        <div className="max-w-3xl mx-auto rounded-2xl shadow-lg p-6 md:p-8 lg:p-10">
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-sky-600 mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            <FAQItem question="Where are you located?" answer="We are based in Palghar, Maharashtra, and serve clients PAN India." />
+            <FAQItem question="What services do you offer?" answer="We offer business registration, GST, income tax filing, accounting, MSME, trademark, FSSAI, and more." />
+            <FAQItem question="How do I book a consultation?" answer="Simply fill out the consultation form on this page, and our team will contact you soon." />
+            <FAQItem question="Is my data safe with you?" answer="Absolutely. We follow strict confidentiality and data protection protocols for all client information." />
+            <FAQItem question="Do you provide services outside Maharashtra?" answer="Yes, we provide services to clients all over India." />
           </div>
         </div>
       </section>
@@ -439,3 +471,67 @@ const Home = () => {
 };
 
 export default Home;
+
+// Simple Indian Income Tax Calculator (Old Regime, FY 2024-25, for demo)
+const TaxCalculator = () => {
+  const [income, setIncome] = useState('');
+  const [tax, setTax] = useState(null);
+
+  const calculateTax = (income) => {
+    let taxable = Number(income);
+    let result = 0;
+    if (taxable <= 250000) result = 0;
+    else if (taxable <= 500000) result = (taxable - 250000) * 0.05;
+    else if (taxable <= 1000000) result = 12500 + (taxable - 500000) * 0.2;
+    else result = 112500 + (taxable - 1000000) * 0.3;
+    // Add 4% cess
+    result = result + result * 0.04;
+    return Math.round(result);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setTax(calculateTax(income));
+  };
+
+  return (
+    <form className="space-y-4" onSubmit={handleSubmit}>
+      <div>
+        <label className="block font-medium text-neutral-700 mb-1 text-sm sm:text-base">Annual Income (₹)</label>
+        <input
+          type="number"
+          className="w-full border border-neutral-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-sky-400 text-sm sm:text-base"
+          placeholder="Enter your annual income"
+          value={income}
+          min="0"
+          onChange={e => setIncome(e.target.value)}
+          required
+        />
+      </div>
+      <button type="submit" className="w-full bg-sky-500 hover:bg-sky-600 text-white font-semibold px-6 py-2 rounded-lg shadow transition-all duration-200 text-base sm:text-lg">Calculate Tax</button>
+      {tax !== null && (
+        <div className="mt-3 text-center text-base sm:text-lg font-semibold text-sky-700 break-words">
+          Estimated Tax: ₹{tax.toLocaleString('en-IN')}
+        </div>
+      )}
+    </form>
+  );
+};
+
+// FAQ Item component
+const FAQItem = ({ question, answer }) => {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="border border-sky-200 rounded-lg bg-white">
+      <button
+        className="w-full text-left px-4 py-3 font-semibold text-sky-700 flex justify-between items-center focus:outline-none"
+        onClick={() => setOpen(o => !o)}
+        type="button"
+      >
+        {question}
+        <span>{open ? '-' : '+'}</span>
+      </button>
+      {open && <div className="px-4 pb-4 text-neutral-700 text-sm">{answer}</div>}
+    </div>
+  );
+};
