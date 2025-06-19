@@ -8,6 +8,7 @@ import Book_Consultancy from './components/Book_Consultancy/book_Consultancy';
 import ISO_Certification from './components/ISO_Certification/ISO_Certification';
 import GST_Registration from './components/GST_Registration/GST_Registration';
 import Gst_Return_Filing from './components/Gst_Return_Filing/gst_Return_Filing';
+import MSME_Registration from './components/MSME_Registration/MSME_Registration';
 
 function Placeholder({ text }) {
   return <div className="p-8 text-center text-xl">{text}</div>;
@@ -26,7 +27,7 @@ function App() {
         <Route path="/popular/service2" element={<ISO_Certification/>} />
         <Route path="/popular/service3" element={<GST_Registration/>} />
         <Route path="/popular/service4" element={<Gst_Return_Filing/>} />
-        <Route path="/popular/service5" element={<Placeholder text="MSME REGISTRATION" />} />
+        <Route path="/popular/service5" element={<MSME_Registration/>} />
         <Route path="/popular/service6" element={<Placeholder text="COMPANY REGISTRATION" />} />
         <Route path="/popular/service7" element={<Placeholder text="FIRM REGISTRATION" />} />
         <Route path="/popular/service8" element={<Placeholder text="FSSAI LICENSE" />} />
