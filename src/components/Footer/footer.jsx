@@ -16,7 +16,7 @@ const footerLinks = [
     title: 'GST PORTAL',
     links: [
       { label: 'GST Registration', to: '/gst/registration' },
-      { label: 'GST Return Filing', to: '/gst/return-filing' },
+      { label: 'GST Return Filing', to: '/popular/service4' },
     ],
   },
   {
