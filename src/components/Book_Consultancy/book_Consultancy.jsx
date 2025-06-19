@@ -1,15 +1,18 @@
 import React, { useEffect } from 'react'
 import { FaUserTie, FaRegLightbulb, FaRegCalendarCheck } from 'react-icons/fa';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Book_Consultancy = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' });
+    AOS.init({ once: false, duration: 700, offset: 80 });
   }, []);
 
   return (
     <div className="bg-neutral-50 min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-sky-100 via-white to-sky-50 py-12 px-4 flex justify-center">
+      <section data-aos="fade-up" className="bg-gradient-to-br from-sky-100 via-white to-sky-50 py-12 px-4 flex justify-center">
         <div className="w-full max-w-2xl flex flex-col items-center rounded-2xl shadow-lg bg-sky-100 border-2 border-sky-300 p-6 md:p-10">
           <div className="flex items-center justify-center mb-4">
             <FaUserTie className="text-sky-500 w-14 h-14 md:w-20 md:h-20" />
@@ -31,7 +34,7 @@ const Book_Consultancy = () => {
       </section>
 
       {/* Why Book a Tax Consultancy Session Section */}
-      <section className="py-10 px-4 flex justify-center">
+      <section data-aos="fade-up" className="py-10 px-4 flex justify-center">
         <div className="w-full max-w-4xl flex flex-col items-center rounded-2xl shadow-lg bg-white border-2 border-sky-100 p-6 md:p-10">
           <div className="flex items-center justify-center mb-4">
             <FaRegLightbulb className="text-sky-500 w-12 h-12 md:w-16 md:h-16" />
@@ -52,7 +55,7 @@ const Book_Consultancy = () => {
       </section>
 
       {/* Book Consultancy Form Section */}
-      <section className="py-10 px-4 flex justify-center" id="consultancy-form">
+      <section data-aos="fade-up" id="consultancy-form" className="py-10 px-4 flex justify-center">
         <div id="consultancy-form" className="w-full max-w-3xl flex flex-col items-center rounded-2xl shadow-lg bg-white border-2 border-sky-100 p-6 md:p-10">
           <h2 className="text-2xl md:text-3xl font-extrabold text-sky-700 mb-4 text-center flex items-center justify-center gap-2">
             <FaRegCalendarCheck className="w-7 h-7 text-sky-500" />

@@ -9,6 +9,8 @@ import {
   FaStar,
   FaFolderOpen
 } from 'react-icons/fa';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const services = [
   {
@@ -48,6 +50,7 @@ const Home = () => {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' });
+    AOS.init({ once: false, duration: 700, offset: 80 });
   }, []);
 
   const scrollToForm = () => {
@@ -143,7 +146,7 @@ const Home = () => {
   return (
     <div className="bg-neutral-50 min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-sky-100 via-white to-sky-50 py-16 px-4 md:px-0">
+      <section data-aos="fade-up" className="bg-gradient-to-br from-sky-100 via-white to-sky-50 py-16 px-4 md:px-0">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
           <div className="flex-1 text-center md:text-left">
             <h1 className="text-3xl md:text-5xl font-extrabold text-neutral-900 mb-4 leading-tight">
@@ -171,7 +174,7 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="max-w-5xl mx-auto py-12 px-4">
+      <section data-aos="fade-up" className="max-w-5xl mx-auto py-12 px-4">
         <h2 className="text-2xl md:text-3xl font-bold text-neutral-800 text-center mb-8">Our Services</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service) => (
@@ -185,7 +188,7 @@ const Home = () => {
       </section>
 
       {/* Trust Section */}
-      <section className="bg-white py-10 px-4">
+      <section data-aos="fade-up" className="bg-white py-10 px-4">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex-1 text-center md:text-left">
             <h4 className="text-lg font-bold text-sky-500 mb-2">Why Choose Us?</h4>
@@ -204,7 +207,7 @@ const Home = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="bg-neutral-50 py-12 px-4">
+      <section data-aos="fade-up" className="bg-neutral-50 py-12 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-neutral-800 text-center mb-4">What Our Clients Say</h2>
           <p className="text-neutral-600 text-center mb-8 max-w-2xl mx-auto">Don't just take our word for it. Here's what our satisfied clients have to say about our services.</p>
@@ -277,7 +280,7 @@ const Home = () => {
       </section>
 
       {/* Money Back Guarantee Section */}
-      <section className="bg-white py-12 px-4">
+      <section data-aos="fade-up" className="bg-white py-12 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
             <div className="flex-1 text-center lg:text-left">
@@ -317,7 +320,7 @@ const Home = () => {
       </section>
 
       {/* Interactive Tax Calculator Section */}
-      <section className="bg-white py-12 px-4">
+      <section data-aos="fade-up" className="bg-white py-12 px-4">
         <div className="max-w-2xl mx-auto rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 lg:p-10">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center text-sky-600 mb-2 flex items-center justify-center gap-2 break-words">
             <FaCalculator className="w-5 h-5 sm:w-6 sm:h-6 text-sky-500" />
@@ -329,7 +332,7 @@ const Home = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="bg-sky-50 py-12 px-4">
+      <section data-aos="fade-up" className="bg-sky-50 py-12 px-4">
         <div className="max-w-3xl mx-auto rounded-2xl shadow-lg p-6 md:p-8 lg:p-10">
           <h2 className="text-2xl md:text-3xl font-bold text-center text-sky-600 mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
@@ -343,7 +346,7 @@ const Home = () => {
       </section>
 
       {/* Consultation Form Section */}
-      <section id="consultation-form" className="bg-sky-50 py-8 md:py-12 px-4">
+      <section data-aos="fade-up" id="consultation-form" className="bg-sky-50 py-8 md:py-12 px-4">
         <div className="max-w-xl mx-auto bg-white rounded-2xl shadow-lg p-6 md:p-8 lg:p-10">
           <h2 className="text-2xl md:text-3xl font-bold text-center text-sky-600 mb-2 flex items-center justify-center gap-2">
             <FaCalendarAlt className="w-6 h-6 text-sky-500" />

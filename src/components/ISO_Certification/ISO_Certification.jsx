@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FaCertificate } from 'react-icons/fa';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const ISO_Certification = () => {
+  useEffect(() => {
+    AOS.init({ once: false, duration: 700, offset: 80 });
+  }, []);
   return (
     <div className="bg-neutral-50 min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-sky-100 via-white to-sky-50 py-12 px-4 flex justify-center">
+      <section data-aos="fade-up" className="bg-gradient-to-br from-sky-100 via-white to-sky-50 py-12 px-4 flex justify-center">
         <div className="w-full max-w-2xl flex flex-col items-center rounded-2xl shadow-lg bg-sky-100 border-2 border-sky-300 p-6 md:p-10">
           <div className="flex items-center justify-center mb-4">
             <FaCertificate className="text-sky-500 w-14 h-14 md:w-20 md:h-20" />
@@ -24,7 +29,7 @@ const ISO_Certification = () => {
       </section>
 
       {/* ISO Info Cards Section */}
-      <section className="py-10 px-4">
+      <section data-aos="fade-up" className="py-10 px-4">
         <div className="max-w-4xl mx-auto space-y-8">
           {/* Looking for ISO Certification in India? */}
           <div className="bg-sky-50 rounded-2xl shadow p-6 flex flex-col">
@@ -61,7 +66,7 @@ const ISO_Certification = () => {
       </section>
 
       {/* ISO Registration Fees Section */}
-      <section className="py-10 px-4">
+      <section data-aos="fade-up" className="py-10 px-4">
         <div className="max-w-2xl mx-auto bg-sky-50 rounded-2xl shadow p-6 flex flex-col items-center">
           <h2 className="text-xl md:text-2xl font-bold text-sky-700 mb-3">ISO Registration Fees</h2>
           <p className="text-neutral-700 mb-2">Get your ISO Registration done at an all-inclusive price of just <span className="text-sky-600 font-bold">₹1499/-</span>.</p>
@@ -81,7 +86,7 @@ const ISO_Certification = () => {
       </section>
 
       {/* ISO Registration Form Section */}
-      <section className="py-10 px-4 flex justify-center">
+      <section data-aos="fade-up" className="py-10 px-4 flex justify-center">
         <div className="w-full max-w-2xl flex flex-col items-center rounded-2xl shadow-lg bg-white border-2 border-sky-100 p-6 md:p-10">
           <h2 className="text-2xl md:text-3xl font-bold text-sky-700 mb-2 text-center">Get Your ISO Registration Certificate</h2>
           <p className="text-sky-600 text-base md:text-lg text-center mb-6">Trusted by 1 lakh+ customers across India</p>
@@ -91,7 +96,7 @@ const ISO_Certification = () => {
       </section>
 
       {/* Why Choose Us for ISO Certification? */}
-      <section className="py-10 px-4">
+      <section data-aos="fade-up" className="py-10 px-4">
         <div className="max-w-4xl mx-auto bg-sky-50 rounded-2xl shadow p-6 flex flex-col items-center">
           <h2 className="text-xl md:text-2xl font-bold text-sky-700 mb-4 text-center">Why Choose Us for Your ISO Certification?</h2>
           <ul className="space-y-2 text-neutral-700 text-base md:text-lg w-full max-w-md">
@@ -106,7 +111,7 @@ const ISO_Certification = () => {
       </section>
 
       {/* Our Simple ISO Registration Process */}
-      <section className="py-10 px-4">
+      <section data-aos="fade-up" className="py-10 px-4">
         <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow p-6 flex flex-col items-center">
           <h2 className="text-xl md:text-2xl font-bold text-sky-700 mb-4 text-center">Our Simple ISO Registration Process</h2>
           <ol className="list-decimal pl-6 text-neutral-700 text-base md:text-lg w-full max-w-md space-y-2">
@@ -120,7 +125,7 @@ const ISO_Certification = () => {
       </section>
 
       {/* Types of ISO Certificates We Offer */}
-      <section className="py-10 px-4">
+      <section data-aos="fade-up" className="py-10 px-4">
         <div className="max-w-4xl mx-auto bg-sky-50 rounded-2xl shadow p-6 flex flex-col items-center">
           <h2 className="text-xl md:text-2xl font-bold text-sky-700 mb-4 text-center">Types of ISO Certificates We Offer</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-2xl">

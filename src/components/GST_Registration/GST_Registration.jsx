@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const GST_Registration = () => {
+  useEffect(() => {
+    AOS.init({ once: false, duration: 700, offset: 80 });
+  }, []);
   return (
     <div className="bg-neutral-50 min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-sky-100 via-white to-sky-50 py-12 px-4 flex justify-center">
+      <section data-aos="fade-up" className="bg-gradient-to-br from-sky-100 via-white to-sky-50 py-12 px-4 flex justify-center">
         <div className="w-full max-w-2xl flex flex-col items-center rounded-2xl shadow-lg bg-sky-100 border-2 border-sky-300 p-6 md:p-10">
           <h2 className="text-2xl md:text-4xl font-extrabold text-sky-700 mb-3 text-center">GST Registration – Apply Online Easily</h2>
           <p className="text-neutral-700 text-base md:text-lg text-center max-w-xl">
@@ -20,10 +25,10 @@ const GST_Registration = () => {
       </section>
 
       {/* GST Info Cards Section */}
-      <section className="py-10 px-4">
+      <section data-aos="fade-up" className="py-10 px-4">
         <div className="max-w-4xl mx-auto space-y-8">
           {/* What is GST Registration? */}
-          <div className="bg-sky-50 rounded-2xl shadow p-6 flex flex-col">
+          <div data-aos="fade-up" className="bg-sky-50 rounded-2xl shadow p-6 flex flex-col">
             <h2 className="text-xl md:text-2xl font-bold text-sky-700 mb-3">What is GST Registration?</h2>
             <p className="text-neutral-700 mb-2">GST is one single tax that replaced old taxes like VAT, Service Tax, and others. It started in July 2017 in India. If your yearly business income is more than ₹40 lakhs (or ₹10 lakhs in some states), you must register for GST.</p>
             <p className="text-neutral-700">Some businesses like online stores must register from the beginning — even if their income is less. Our team at <strong>SmartFile Solutions</strong> can help you get your GST certificate online in just 2-3 days.</p>
@@ -31,7 +36,7 @@ const GST_Registration = () => {
 
 
           {/* Who Needs GST Registration? */}
-          <div className="bg-sky-50 rounded-2xl shadow p-6 flex flex-col">
+          <div data-aos="fade-up" className="bg-sky-50 rounded-2xl shadow p-6 flex flex-col">
             <h2 className="text-xl md:text-2xl font-bold text-sky-700 mb-3">Who Needs GST Registration?</h2>
             <ul className="list-disc pl-6 text-neutral-700 space-y-2">
               <li><strong>1. Existing Taxpayers:</strong> Businesses previously registered under VAT, Service Tax, or CST must migrate to GST.</li>
@@ -47,7 +52,7 @@ const GST_Registration = () => {
           </div>
 
           {/* How to Register for GST Online */}
-          <div className="bg-sky-50 rounded-2xl shadow p-6 flex flex-col">
+          <div data-aos="fade-up" className="bg-sky-50 rounded-2xl shadow p-6 flex flex-col">
             <h2 className="text-xl md:text-2xl font-bold text-sky-700 mb-3">How to Register for GST Online</h2>
             <ol className="list-decimal pl-6 text-neutral-700 space-y-2 mb-2">
               <li>Visit the official GST portal: <a href="https://www.gst.gov.in" target="_blank" className="text-sky-600 underline">www.gst.gov.in</a></li>
@@ -62,7 +67,7 @@ const GST_Registration = () => {
       </section>
 
       {/* GST Registration Package Section */}
-      <section className="py-10 px-4">
+      <section data-aos="fade-up" className="py-10 px-4">
         <div className="max-w-2xl mx-auto bg-sky-50 rounded-2xl shadow p-6 flex flex-col items-center">
           <h2 className="text-xl md:text-2xl font-bold text-sky-700 mb-3">GST Registration Package – Just ₹999/- Only</h2>
           <p className="text-neutral-700 mb-3">Get your business GST registered quickly and professionally with our all-in-one package:</p>
@@ -77,7 +82,7 @@ const GST_Registration = () => {
       </section>
 
       {/* GST Registration Form Section */}
-      <section className="py-10 px-4 flex justify-center">
+      <section data-aos="fade-up" className="py-10 px-4 flex justify-center">
         <div className="w-full max-w-2xl flex flex-col items-center rounded-2xl shadow-lg bg-white border-2 border-sky-100 p-6 md:p-10">
           <div className="w-full bg-sky-500 rounded-t-2xl p-6 mb-6">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-2 text-center">Let's Start Your GST Registration with SmartFile Solutions</h2>
@@ -89,11 +94,11 @@ const GST_Registration = () => {
       </section>
 
       {/* GST Info Cards Section (Simple Language) */}
-      <section className="py-10 px-4">
+      <section data-aos="fade-up" className="py-10 px-4">
         <div className="max-w-4xl mx-auto space-y-8">
 
           {/* What You Get in ₹999 GST Package */}
-          <div className="bg-sky-50 rounded-2xl shadow p-6 flex flex-col">
+          <div data-aos="fade-up" className="bg-sky-50 rounded-2xl shadow p-6 flex flex-col">
             <h2 className="text-xl md:text-2xl font-bold text-sky-700 mb-3">What You Get in ₹999 GST Package</h2>
             <ul className="list-disc pl-6 text-neutral-700 space-y-2">
               <li>Filing done by legal expert</li>
@@ -105,7 +110,7 @@ const GST_Registration = () => {
           </div>
 
           {/* Benefits of GST Registration */}
-          <div className="bg-sky-50 rounded-2xl shadow p-6 flex flex-col">
+          <div data-aos="fade-up" className="bg-sky-50 rounded-2xl shadow p-6 flex flex-col">
             <h2 className="text-xl md:text-2xl font-bold text-sky-700 mb-3">Benefits of GST Registration</h2>
             <ul className="list-disc pl-6 text-neutral-700 space-y-2">
               <li>Your business becomes legally strong</li>
@@ -120,13 +125,13 @@ const GST_Registration = () => {
           </div>
 
           {/* What is GST Number? */}
-          <div className="bg-sky-50 rounded-2xl shadow p-6 flex flex-col">
+          <div data-aos="fade-up" className="bg-sky-50 rounded-2xl shadow p-6 flex flex-col">
             <h2 className="text-xl md:text-2xl font-bold text-sky-700 mb-3">What is GST Number?</h2>
             <p className="text-neutral-700">GST Number is a 15-digit unique ID for your business. It's like a PAN card for your tax. It shows your state, PAN number, and business type. Example: 09ABCDE1234F1Z5</p>
           </div>
 
           {/* Documents Needed for GST */}
-          <div className="bg-sky-50 rounded-2xl shadow p-6 flex flex-col">
+          <div data-aos="fade-up" className="bg-sky-50 rounded-2xl shadow p-6 flex flex-col">
             <h2 className="text-xl md:text-2xl font-bold text-sky-700 mb-3">Documents Needed for GST</h2>
             <ul className="list-disc pl-6 text-neutral-700 space-y-2">
               <li><strong>For Individual Business:</strong> PAN, Aadhaar, business proof</li>
@@ -138,13 +143,13 @@ const GST_Registration = () => {
           </div>
 
           {/* Penalty for Not Registering */}
-          <div className="bg-sky-50 rounded-2xl shadow p-6 flex flex-col">
+          <div data-aos="fade-up" className="bg-sky-50 rounded-2xl shadow p-6 flex flex-col">
             <h2 className="text-xl md:text-2xl font-bold text-sky-700 mb-3">Penalty for Not Registering</h2>
             <p className="text-neutral-700">If you don't register and you should, you may be fined 10% of the tax amount — minimum ₹10,000. If done intentionally, the fine can go up to 100% of the tax due.</p>
           </div>
 
           {/* What to Do After GST Registration? */}
-          <div className="bg-sky-50 rounded-2xl shadow p-6 flex flex-col">
+          <div data-aos="fade-up" className="bg-sky-50 rounded-2xl shadow p-6 flex flex-col">
             <h2 className="text-xl md:text-2xl font-bold text-sky-700 mb-3">What to Do After GST Registration?</h2>
             <p className="text-neutral-700">After getting GST, you must file GST returns every month or every 3 months depending on your business type. This keeps your business compliant and avoids fines.</p>
           </div>

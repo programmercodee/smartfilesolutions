@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import { FaFileInvoiceDollar, FaCalculator, FaFolderOpen } from 'react-icons/fa';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Income_Tax_eFiling = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' });
+    AOS.init({ once: false, duration: 700, offset: 80 });
   }, []);
 
   return (
     <div className="bg-neutral-50 min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-sky-100 via-white to-sky-50 py-12 px-4 flex justify-center">
+      <section data-aos="fade-up" className="bg-gradient-to-br from-sky-100 via-white to-sky-50 py-12 px-4 flex justify-center">
         <div className="w-full max-w-2xl flex flex-col items-center rounded-2xl shadow-lg bg-sky-100 border-2 border-sky-300 p-6 md:p-10">
           <div className="flex items-center justify-center mb-4">
             <FaFileInvoiceDollar className="text-sky-500 w-14 h-14 md:w-20 md:h-20" />
@@ -31,7 +34,7 @@ const Income_Tax_eFiling = () => {
       </section>
 
       {/* Info Sections */}
-      <section className="py-8 px-4 max-w-4xl mx-auto space-y-8">
+      <section data-aos="fade-up" className="py-8 px-4 max-w-4xl mx-auto space-y-8">
         {/* Introduction to Income Tax */}
         <div className="bg-white rounded-2xl shadow p-6 md:p-8">
           <h2 className="text-xl md:text-2xl font-bold text-sky-700 mb-3">Introduction to Income Tax</h2>
@@ -83,7 +86,7 @@ const Income_Tax_eFiling = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="bg-sky-50 py-12 px-4">
+      <section data-aos="fade-up" className="bg-sky-50 py-12 px-4">
         <div className="max-w-4xl mx-auto rounded-2xl shadow-lg p-6 md:p-10">
           <h2 className="text-2xl md:text-3xl font-bold text-center text-sky-600 mb-6">Frequently Asked Questions (Income Tax in India)</h2>
           <div className="space-y-4">
@@ -99,7 +102,7 @@ const Income_Tax_eFiling = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-12 px-4">
+      <section data-aos="fade-up" className="py-12 px-4">
         <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg p-6 md:p-10 flex flex-col items-center">
           <h2 className="text-2xl md:text-3xl font-bold text-sky-700 mb-3 text-center">Income Tax Return Filing Charges</h2>
           <p className="text-neutral-700 text-base md:text-lg mb-6 text-center">
@@ -130,7 +133,7 @@ const Income_Tax_eFiling = () => {
       </section>
 
       {/* ITR Filing Form Section */}
-      <section className="py-12 px-4 bg-sky-50">
+      <section data-aos="fade-up" className="py-12 px-4 bg-sky-50">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-8 items-stretch">
           {/* Left: Plans & Features */}
           <div className="flex-1 bg-gradient-to-br from-sky-200 via-white to-sky-100 rounded-2xl shadow-lg p-6 md:p-10 flex flex-col justify-center items-center border-2 border-sky-100">
@@ -171,7 +174,7 @@ const Income_Tax_eFiling = () => {
       </section>
 
       {/* ITR Info Cards Section */}
-      <section className="py-12 px-4 bg-white">
+      <section data-aos="fade-up" className="py-12 px-4 bg-white">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Types of ITR Forms */}
           <div className="bg-sky-50 rounded-2xl shadow p-6 flex flex-col">
