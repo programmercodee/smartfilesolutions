@@ -5,6 +5,7 @@ import Footer from './components/Footer/footer';
 import Home from './components/Home/home';
 import Income_Tax_eFiling from './components/Income_Tax_eFiling/income_Tax_eFiling';
 import Book_Consultancy from './components/Book_Consultancy/book_Consultancy';
+import ISO_Certification from './components/ISO_Certification/ISO_Certification';
 
 function Placeholder({ text }) {
   return <div className="p-8 text-center text-xl">{text}</div>;
@@ -19,8 +20,8 @@ function App() {
         <Route path="/income-tax-filing" element={<Income_Tax_eFiling/>} />
         <Route path="/book-consultancy" element={<Book_Consultancy/>} />
         {/* Popular Services submenu */}
-        <Route path="/popular/service1" element={<Placeholder text="ITR FILING SERVICES" />} />
-        <Route path="/popular/service2" element={<Placeholder text="ISO CERTIFICATION" />} />
+        <Route path="/popular/service1" element={<Income_Tax_eFiling/>} />
+        <Route path="/popular/service2" element={<ISO_Certification/>} />
         <Route path="/popular/service3" element={<Placeholder text="GST REGISTRATION" />} />
         <Route path="/popular/service4" element={<Placeholder text="GST RETURN FILING" />} />
         <Route path="/popular/service5" element={<Placeholder text="MSME REGISTRATION" />} />

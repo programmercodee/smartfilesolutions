@@ -23,7 +23,7 @@ const menuItems = [
     submenu: [
       {
         label: 'Company registration',
-        link: '/business/llp',
+        // link: '/business/llp',
         submenu: [
           { label: 'Private Limited', link: '/business/llp/private-ltd' },
           { label: 'Public Limited', link: '/business/llp/public-ltd' },
