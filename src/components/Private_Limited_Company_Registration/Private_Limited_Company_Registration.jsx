@@ -114,6 +114,14 @@ const FAQAccordion = () => {
 };
 
 const Private_Limited_Company_Registration = () => {
+  const formRef = React.useRef(null);
+
+  const scrollToForm = () => {
+    if (formRef.current) {
+      formRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <div className="bg-neutral-50 min-h-screen">
       {/* Hero Section */}
@@ -123,7 +131,7 @@ const Private_Limited_Company_Registration = () => {
           <p className="text-neutral-700 text-base md:text-lg text-center max-w-xl">Register your Private Limited Company through a 100% Government Certified Portal. Simply fill in the details below and kick-start your Pvt Ltd company registration process instantly — includes FREE expert consultancy!</p>
           <button
             className="mt-6 bg-sky-500 hover:bg-sky-600 text-white font-semibold px-8 py-3 rounded-lg shadow transition-all duration-200 text-base md:text-lg"
-            onClick={() => { /* Add scroll or action here */ }}
+            onClick={scrollToForm}
           >
             Get Started
           </button>
@@ -170,14 +178,14 @@ const Private_Limited_Company_Registration = () => {
           </ul>
           <button
             className="bg-sky-500 hover:bg-sky-600 text-white font-semibold px-8 py-3 rounded-lg shadow transition-all duration-200 text-base md:text-lg"
-            onClick={() => { /* Add scroll or action here */ }}
+            onClick={scrollToForm}
           >
             Book Now
           </button>
         </div>
       </section>
       {/* Company Registration Form Section */}
-      <section className="py-10 px-4 flex justify-center">
+      <section ref={formRef} className="py-10 px-4 flex justify-center" style={{ scrollMarginTop: 0 }}>
         <div className="w-full max-w-3xl bg-white rounded-2xl shadow-lg border-2 border-sky-100 p-6 md:p-10 flex flex-col items-center">
           <div className="w-full bg-sky-500 rounded-t-2xl p-6 mb-6">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-2 text-center">Company Registration in India</h2>
