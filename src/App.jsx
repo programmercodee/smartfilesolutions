@@ -13,6 +13,7 @@ import Private_Limited_Company_Registration from './components/Private_Limited_C
 import Proprietorship_Firm_Registration from './components/Proprietorship_Firm_Registration/Proprietorship_Firm_Registration';
 import FSSAI_Registration from './components/FSSAI_Registration/FSSAI_Registration';
 import Trademark_Registration from './components/Trademark_Registration/Trademark_Registration';
+import LLP_Registration from './components/LLP_Registration/LLP_Registration';
 
 function Placeholder({ text }) {
   return <div className="p-8 text-center text-xl">{text}</div>;
@@ -37,9 +38,9 @@ function App() {
         <Route path="/popular/service8" element={<FSSAI_Registration/>} />
         <Route path="/popular/service9" element={<Trademark_Registration/>} />
         {/* Business Registration submenu and sub-submenu */}
-        <Route path="/business/llp" element={<Placeholder text="COMPANY REGISTRATION" />} />
-        <Route path="/business/llp/private-ltd" element={<Placeholder text="Private Limited" />} />
-        <Route path="/business/llp/public-ltd" element={<Placeholder text="Public Limited" />} />
+        <Route path="/business/company/service1" element={<Private_Limited_Company_Registration />} />
+        <Route path="/business/company/service2" element={<LLP_Registration/>} />
+        <Route path="/business/company/service3" element={<Placeholder text="business/company/service3" />} />
         <Route path="/business/private-ltd" element={<Placeholder text="FIRM REGISTRATION" />} />
         <Route path="/business/private-ltd/private-ltd" element={<Placeholder text="Private Limited (Firm)" />} />
         <Route path="/business/private-ltd/public-ltd" element={<Placeholder text="Public Limited (Firm)" />} />

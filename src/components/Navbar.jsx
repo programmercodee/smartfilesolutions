@@ -25,9 +25,9 @@ const menuItems = [
         label: 'Company registration',
         // link: '/business/llp',
         submenu: [
-          { label: 'Private Limited Company registration', link: '/business/llp/private-ltd' },
-          { label: 'LLP registration', link: '/business/llp/public-ltd' },
-          { label: 'One person company registration', link: '/business/llp/public-ltd' },
+          { label: 'Private Limited Company registration', link: '/business/company/service1' },
+          { label: 'LLP registration', link: '/business/company/service2' },
+          { label: 'One person company registration', link: '/business/company/service3' },
         ],
       },
       {
