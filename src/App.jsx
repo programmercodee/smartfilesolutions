@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer/footer';
 import Home from './components/Home/home';
 import Income_Tax_eFiling from './components/Income_Tax_eFiling/income_Tax_eFiling';
+import Book_Consultancy from './components/Book_Consultancy/book_Consultancy';
 
 function Placeholder({ text }) {
   return <div className="p-8 text-center text-xl">{text}</div>;
@@ -16,7 +17,7 @@ function App() {
       <Routes>
         {/* Main menu routes */}
         <Route path="/income-tax-filing" element={<Income_Tax_eFiling/>} />
-        <Route path="/book-consultancy" element={<Placeholder text="BOOK CONSULTANCY" />} />
+        <Route path="/book-consultancy" element={<Book_Consultancy/>} />
         {/* Popular Services submenu */}
         <Route path="/popular/service1" element={<Placeholder text="ITR FILING SERVICES" />} />
         <Route path="/popular/service2" element={<Placeholder text="ISO CERTIFICATION" />} />

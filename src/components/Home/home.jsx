@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   FaBuilding,
   FaDownload,
@@ -45,6 +45,10 @@ const Home = () => {
     query: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, []);
 
   const scrollToForm = () => {
     const formSection = document.getElementById('consultation-form');

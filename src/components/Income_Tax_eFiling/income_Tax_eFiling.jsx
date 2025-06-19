@@ -1,7 +1,11 @@
-import React from 'react'
-import { FaFileInvoiceDollar } from 'react-icons/fa';
+import React, { useState, useEffect } from 'react'
+import { FaFileInvoiceDollar, FaCalculator, FaFolderOpen } from 'react-icons/fa';
 
 const Income_Tax_eFiling = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, []);
+
   return (
     <div className="bg-neutral-50 min-h-screen">
       {/* Hero Section */}
@@ -16,7 +20,10 @@ const Income_Tax_eFiling = () => {
           </p>
           <button
             className="mt-6 bg-sky-500 hover:bg-sky-600 text-white font-semibold px-8 py-3 rounded-lg shadow transition-all duration-200 text-base md:text-lg"
-            onClick={() => { /* Add navigation or action here */ }}
+            onClick={() => {
+              const el = document.getElementById('itr-filing-form');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }}
           >
             Get Started
           </button>
@@ -112,7 +119,10 @@ const Income_Tax_eFiling = () => {
           <p className="text-neutral-500 italic text-sm mb-6 w-full text-left">*Note: Tax Audit and Books of Accounts preparation for F&O traders are not included in the above fees.</p>
           <button
             className="mt-2 bg-sky-500 hover:bg-sky-600 text-white font-semibold px-8 py-3 rounded-lg shadow transition-all duration-200 text-base md:text-lg"
-            onClick={() => { /* Add booking action here */ }}
+            onClick={() => {
+              const el = document.getElementById('itr-filing-form');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }}
           >
             Book Now
           </button>
@@ -148,10 +158,11 @@ const Income_Tax_eFiling = () => {
               </ol>
               <p className="text-neutral-500 italic text-xs">*Note: Tax audit and books of accounts preparation for F&O traders are not included in the above fees.</p>
             </div>
+
           </div>
           {/* Right: Form */}
           <div className="flex-1 flex items-center">
-            <div className="w-full bg-white rounded-2xl shadow-lg p-6 md:p-10">
+            <div id="itr-filing-form" className="w-full bg-white rounded-2xl shadow-lg p-6 md:p-10">
               <h3 className="text-xl md:text-2xl font-bold text-sky-700 mb-4 text-center">Get Started with Your ITR Filing</h3>
               <ITRFilingForm />
             </div>
@@ -256,7 +267,7 @@ const Income_Tax_eFiling = () => {
             <ol className="list-decimal pl-6 text-neutral-700 space-y-1">
               <li>Visit: <a href="https://incometaxindiaefiling.gov.in" target="_blank" className="text-sky-600 underline">https://incometaxindiaefiling.gov.in</a></li>
               <li>Create an account using your PAN as login ID</li>
-              <li>Link Aadhar under profile settings</li>
+              <li>Link Aadhaar under profile settings</li>
               <li>Check Form 26AS for tax details</li>
               <li>Download appropriate ITR form (Excel Utility)</li>
               <li>Fill all required details & validate each sheet</li>
