@@ -10,6 +10,7 @@ import GST_Registration from './components/GST_Registration/GST_Registration';
 import Gst_Return_Filing from './components/Gst_Return_Filing/gst_Return_Filing';
 import MSME_Registration from './components/MSME_Registration/MSME_Registration';
 import Private_Limited_Company_Registration from './components/Private_Limited_Company_Registration/Private_Limited_Company_Registration';
+import Proprietorship_Firm_Registration from './components/Proprietorship_Firm_Registration/Proprietorship_Firm_Registration';
 
 function Placeholder({ text }) {
   return <div className="p-8 text-center text-xl">{text}</div>;
@@ -30,7 +31,7 @@ function App() {
         <Route path="/popular/service4" element={<Gst_Return_Filing/>} />
         <Route path="/popular/service5" element={<MSME_Registration/>} />
         <Route path="/popular/service6" element={<Private_Limited_Company_Registration/>} />
-        <Route path="/popular/service7" element={<Placeholder text="FIRM REGISTRATION" />} />
+        <Route path="/popular/service7" element={<Proprietorship_Firm_Registration/>} />
         <Route path="/popular/service8" element={<Placeholder text="FSSAI LICENSE" />} />
         <Route path="/popular/service9" element={<Placeholder text="TRADEMARK REGISTRATION" />} />
         {/* Business Registration submenu and sub-submenu */}
