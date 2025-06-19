@@ -25,16 +25,17 @@ const menuItems = [
         label: 'Company registration',
         // link: '/business/llp',
         submenu: [
-          { label: 'Private Limited', link: '/business/llp/private-ltd' },
-          { label: 'Public Limited', link: '/business/llp/public-ltd' },
+          { label: 'Private Limited Company registration', link: '/business/llp/private-ltd' },
+          { label: 'LLP registration', link: '/business/llp/public-ltd' },
+          { label: 'One person company registration', link: '/business/llp/public-ltd' },
         ],
       },
       {
         label: 'Firm registration',
-        link: '/business/private-ltd',
+        // link: '/business/private-ltd',
         submenu: [
-          { label: 'Private Limited', link: '/business/private-ltd/private-ltd' },
-          { label: 'Public Limited', link: '/business/private-ltd/public-ltd' },
+          { label: 'Proprietorship  registration', link: '/business/private-ltd/private-ltd' },
+          { label: 'Partnership  Firm', link: '/business/private-ltd/public-ltd' },
         ],
       },
       // { label: 'Firm registration', link: '/business/private-ltd' },

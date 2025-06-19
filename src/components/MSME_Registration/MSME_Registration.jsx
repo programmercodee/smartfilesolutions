@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const MSME_Registration = () => {
   const formRef = React.useRef(null);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, []);
 
   const handleGetStarted = () => {
     if (formRef.current) {

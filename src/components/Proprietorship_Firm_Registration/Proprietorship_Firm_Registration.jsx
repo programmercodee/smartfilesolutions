@@ -3,6 +3,10 @@ import React from 'react'
 const Proprietorship_Firm_Registration = () => {
   const formRef = React.useRef(null);
 
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, []);
+
   const scrollToForm = () => {
     if (formRef.current) {
       formRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });

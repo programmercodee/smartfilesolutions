@@ -4,6 +4,7 @@ import 'aos/dist/aos.css';
 
 const Gst_Return_Filing = () => {
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
     AOS.init({ once: false, duration: 700, offset: 80 });
   }, []);
   return (

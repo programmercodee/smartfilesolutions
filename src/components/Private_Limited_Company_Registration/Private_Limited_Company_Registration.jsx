@@ -122,6 +122,10 @@ const Private_Limited_Company_Registration = () => {
     }
   };
 
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, []);
+
   return (
     <div className="bg-neutral-50 min-h-screen">
       {/* Hero Section */}
