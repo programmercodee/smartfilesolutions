@@ -1,9 +1,19 @@
 import React from 'react'
 
 const One_Person_Company_Registration = () => {
+  // Ref for the consultation form
+  const formRef = React.useRef(null);
+
   React.useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' });
   }, []);
+
+  // Handler to scroll to form
+  const scrollToForm = () => {
+    if (formRef.current) {
+      formRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
     <div className="bg-neutral-50 min-h-screen">
@@ -16,7 +26,7 @@ const One_Person_Company_Registration = () => {
           </p>
           <button
             className="mt-4 bg-sky-500 hover:bg-sky-600 text-white font-semibold px-8 py-3 rounded-lg shadow transition-all duration-200 text-base md:text-lg"
-            onClick={() => { /* Add scroll or action here */ }}
+            onClick={scrollToForm}
           >
             Get Started
           </button>
@@ -74,14 +84,14 @@ const One_Person_Company_Registration = () => {
           </div>
           <button
             className="mt-2 bg-sky-500 hover:bg-sky-600 text-white font-semibold px-10 py-3 rounded-lg shadow transition-all duration-200 text-lg"
-            onClick={() => { /* Add scroll or action here */ }}
+            onClick={scrollToForm}
           >
             Book Now
           </button>
         </div>
       </section>
       {/* OPC Registration Form Section */}
-      <section className="py-10 px-4 flex justify-center">
+      <section ref={formRef} className="py-10 px-4 flex justify-center">
         <div className="w-full max-w-3xl bg-[#f5f6fd] rounded-2xl shadow p-6 flex flex-col items-center">
           <h2 className="text-2xl md:text-3xl font-extrabold text-neutral-800 mb-6 text-center">
             <span role="img" aria-label="calendar" className="mr-2">📅</span>
