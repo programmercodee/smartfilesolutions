@@ -14,6 +14,7 @@ import Proprietorship_Firm_Registration from './components/Proprietorship_Firm_R
 import FSSAI_Registration from './components/FSSAI_Registration/FSSAI_Registration';
 import Trademark_Registration from './components/Trademark_Registration/Trademark_Registration';
 import LLP_Registration from './components/LLP_Registration/LLP_Registration';
+import One_Person_Company_Registration from './components/One_Person_Company_Registration/One_Person_Company_Registration';
 
 function Placeholder({ text }) {
   return <div className="p-8 text-center text-xl">{text}</div>;
@@ -40,7 +41,7 @@ function App() {
         {/* Business Registration submenu and sub-submenu */}
         <Route path="/business/company/service1" element={<Private_Limited_Company_Registration />} />
         <Route path="/business/company/service2" element={<LLP_Registration/>} />
-        <Route path="/business/company/service3" element={<Placeholder text="business/company/service3" />} />
+        <Route path="/business/company/service3" element={<One_Person_Company_Registration/>} />
         <Route path="/business/private-ltd" element={<Placeholder text="FIRM REGISTRATION" />} />
         <Route path="/business/private-ltd/private-ltd" element={<Placeholder text="Private Limited (Firm)" />} />
         <Route path="/business/private-ltd/public-ltd" element={<Placeholder text="Public Limited (Firm)" />} />
