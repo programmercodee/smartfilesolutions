@@ -281,39 +281,30 @@ const Home = () => {
 
       {/* Money Back Guarantee Section */}
       <section data-aos="fade-up" className="bg-white py-12 px-4">
-        <div className="max-w-5xl mx-auto">
-          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-            <div className="flex-1 text-center lg:text-left">
-              <div className="flex items-center justify-center lg:justify-start mb-4">
-                <div className="bg-green-100 p-3 rounded-full mr-4">
-                  <FaCheckCircle className="w-8 h-8 text-green-600" />
-                </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-neutral-900">100% Money Back Guarantee*</h2>
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center">
+            <div className="flex items-center justify-center mb-4">
+              <div className="bg-green-100 p-3 rounded-full mr-4">
+                <FaCheckCircle className="w-8 h-8 text-green-600" />
               </div>
-              <p className="text-neutral-700 text-base md:text-lg leading-relaxed">
-                At Smart File Solutions, client satisfaction is our top priority. That's why every customer who avails our services is fully covered under our 100% Money Back Guarantee Program*. If we are unable to deliver your final, legally approved certification, you're eligible for a full refund — no questions asked. For complete details, please refer to our Refund Policy section.
-              </p>
-              <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-                <div className="flex items-center text-sm text-neutral-600">
-                  <FaCheck className="w-5 h-5 text-green-500 mr-2" />
-                  No Questions Asked Refund
-                </div>
-                <div className="flex items-center text-sm text-neutral-600">
-                  <FaCheck className="w-5 h-5 text-green-500 mr-2" />
-                  Full Money Back Guarantee
-                </div>
-                <div className="flex items-center text-sm text-neutral-600">
-                  <FaCheck className="w-5 h-5 text-green-500 mr-2" />
-                  Risk-Free Service
-                </div>
-              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-neutral-900">100% Money Back Guarantee*</h2>
             </div>
-            <div className="flex-1 flex justify-center">
-              <img
-                src="https://img.freepik.com/free-vector/guarantee-concept-illustration_114360-3637.jpg?w=700"
-                alt="100% Money Back Guarantee"
-                className="w-full max-w-sm md:max-w-md rounded-xl shadow-lg"
-              />
+            <p className="text-neutral-700 text-base md:text-lg leading-relaxed">
+              At Smart File Solutions, client satisfaction is our top priority. That's why every customer who avails our services is fully covered under our 100% Money Back Guarantee Program*. If we are unable to deliver your final, legally approved certification, you're eligible for a full refund — no questions asked. For complete details, please refer to our Refund Policy section.
+            </p>
+            <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+              <div className="flex items-center text-sm text-neutral-600">
+                <FaCheck className="w-5 h-5 text-green-500 mr-2" />
+                No Questions Asked Refund
+              </div>
+              <div className="flex items-center text-sm text-neutral-600">
+                <FaCheck className="w-5 h-5 text-green-500 mr-2" />
+                Full Money Back Guarantee
+              </div>
+              <div className="flex items-center text-sm text-neutral-600">
+                <FaCheck className="w-5 h-5 text-green-500 mr-2" />
+                Risk-Free Service
+              </div>
             </div>
           </div>
         </div>
