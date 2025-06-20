@@ -1,6 +1,12 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
+import { FaEnvelope, FaPhoneAlt, FaComments, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Contact_Us = () => {
+  // Scroll to top on mount
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, []);
+
   // Ref for the contact form section
   const formSectionRef = useRef(null);
 
@@ -13,6 +19,7 @@ const Contact_Us = () => {
 
   return (
     <div className="bg-neutral-50 min-h-screen">
+
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-sky-100 via-white to-sky-50 py-12 px-4 flex justify-center">
         <div className="w-full max-w-3xl flex flex-col sm:flex-row items-center gap-4 sm:gap-6 rounded-2xl shadow-lg bg-sky-100 border-2 border-sky-300 p-6 md:p-10">
@@ -34,21 +41,7 @@ const Contact_Us = () => {
 
       {/* Contact Info & Form Section */}
       <section className="py-10 px-4 flex justify-center">
-        <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Contact Info */}
-          <div className="bg-white rounded-2xl shadow-md border border-sky-100 p-6 flex flex-col justify-between">
-            <h2 className="text-xl md:text-2xl font-bold text-sky-700 mb-4">Contact Information</h2>
-            <ul className="space-y-4 text-neutral-700 text-base md:text-lg">
-              <li><span className="font-semibold">Email:</span> <a href="mailto:support@smartfilesolutions.com" className="text-sky-600 underline">support@smartfilesolutions.com</a></li>
-              <li><span className="font-semibold">Phone:</span> <a href="tel:+911234567890" className="text-sky-600 underline">+91 12345 67890</a></li>
-              <li><span className="font-semibold">Live Chat:</span> Available on our website (bottom right corner)</li>
-              <li><span className="font-semibold">Address:</span> 123, Main Street, Palghar, Maharashtra, India</li>
-            </ul>
-            <div className="mt-8">
-              <img src="https://img.freepik.com/free-vector/contact-us-concept-illustration_114360-2299.jpg?w=700" alt="Contact Illustration" className="w-full max-w-xs rounded-xl mx-auto" />
-            </div>
-          </div>
-
+        <div className="w-full max-w-2xl grid grid-cols-1 md:grid-cols-1 gap-8">
           {/* Contact Form */}
           <div ref={formSectionRef} className="bg-sky-50 rounded-2xl shadow-md border border-sky-100 p-6 flex flex-col justify-center">
             <h2 className="text-xl md:text-2xl font-bold text-sky-700 mb-4 text-center">Send Us a Message</h2>
@@ -82,7 +75,6 @@ const Contact_Us = () => {
               <ul className="list-disc pl-6 text-neutral-700 space-y-1">
                 <li>Email: support@smartfilesolutions.com</li>
                 <li>Phone: +91 12345 67890</li>
-                <li>Live Chat: Available on our website</li>
                 <li>Contact Form: Use the form above for any query</li>
               </ul>
             </div>
@@ -91,10 +83,25 @@ const Contact_Us = () => {
               <ul className="list-disc pl-6 text-neutral-700 space-y-1">
                 <li>Emails: Response within 24 hours (usually much faster!)</li>
                 <li>Phone: Available Mon-Sat, 10am–7pm</li>
-                <li>Live Chat: Instant support during business hours</li>
                 <li>All queries handled by real experts, not bots</li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Information Section (moved and with icons) */}
+      <section className="py-10 px-4 flex justify-center">
+        <div className="w-full max-w-4xl bg-white rounded-2xl shadow-md border border-sky-100 p-8 md:p-12 flex flex-col items-center mb-10">
+          <h2 className="text-xl md:text-2xl font-bold text-sky-700 mb-4">Contact Information</h2>
+          <ul className="space-y-4 text-neutral-700 text-base md:text-lg w-full max-w-lg">
+            <li className="flex items-center gap-3"><FaEnvelope className="text-sky-500 w-5 h-5" /><span className="font-semibold">Email:</span> <a href="mailto:support@smartfilesolutions.com" className="text-sky-600 underline">support@smartfilesolutions.com</a></li>
+            <li className="flex items-center gap-3"><FaPhoneAlt className="text-sky-500 w-5 h-5" /><span className="font-semibold">Phone:</span> <a href="tel:+911234567890" className="text-sky-600 underline">+91 12345 67890</a></li>
+ 
+            <li className="flex items-center gap-3"><FaMapMarkerAlt className="text-sky-500 w-5 h-5" /><span className="font-semibold">Address:</span> 123, Main Street, Palghar, Maharashtra, India</li>
+          </ul>
+          <div className="mt-8">
+            <img src="https://img.freepik.com/free-vector/contact-us-concept-illustration_114360-2299.jpg?w=700" alt="Contact Illustration" className="w-full max-w-xs rounded-xl mx-auto" />
           </div>
         </div>
       </section>
