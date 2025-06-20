@@ -34,8 +34,8 @@ const menuItems = [
         label: 'Firm registration',
         // link: '/business/private-ltd',
         submenu: [
-          { label: 'Proprietorship  registration', link: '/business/private-ltd/private-ltd' },
-          { label: 'Partnership  Firm', link: '/business/private-ltd/public-ltd' },
+          { label: 'Proprietorship  registration', link: '/business/firm/service1' },
+          { label: 'Partnership  Firm', link: '/business/firm/service2' },
         ],
       },
       // { label: 'Firm registration', link: '/business/private-ltd' },

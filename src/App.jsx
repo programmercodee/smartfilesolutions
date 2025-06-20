@@ -15,6 +15,8 @@ import FSSAI_Registration from './components/FSSAI_Registration/FSSAI_Registrati
 import Trademark_Registration from './components/Trademark_Registration/Trademark_Registration';
 import LLP_Registration from './components/LLP_Registration/LLP_Registration';
 import One_Person_Company_Registration from './components/One_Person_Company_Registration/One_Person_Company_Registration';
+import Partnership_Firm_Registration from './components/Partnership_Firm_Registration/Partnership_Firm_Registration';
+import Contact_Us from './components/Contact_Us/Contact_Us';
 
 function Placeholder({ text }) {
   return <div className="p-8 text-center text-xl">{text}</div>;
@@ -43,13 +45,13 @@ function App() {
         <Route path="/business/company/service2" element={<LLP_Registration/>} />
         <Route path="/business/company/service3" element={<One_Person_Company_Registration/>} />
         <Route path="/business/private-ltd" element={<Placeholder text="FIRM REGISTRATION" />} />
-        <Route path="/business/private-ltd/private-ltd" element={<Placeholder text="Private Limited (Firm)" />} />
-        <Route path="/business/private-ltd/public-ltd" element={<Placeholder text="Public Limited (Firm)" />} />
+        <Route path="/business/firm/service1" element={<Proprietorship_Firm_Registration/>} />
+        <Route path="/business/firm/service2" element={<Partnership_Firm_Registration />} />
         {/* GST Services submenu */}
-        <Route path="/gst/registration" element={<Placeholder text="GST REGISTRATION" />} />
-        <Route path="/gst/filing" element={<Placeholder text="GST FILING" />} />
+        <Route path="/gst/registration" element={<GST_Registration/>} />
+        <Route path="/gst/filing" element={<Gst_Return_Filing/>} />
         {/* Support submenu */}
-        <Route path="/support/contact" element={<Placeholder text="CONTACT US" />} />
+        <Route path="/support/contact" element={<Contact_Us/>} />
         <Route path="/support/faq" element={<Placeholder text="FAQ" />} />
         {/* Home route */}
         <Route path="/" element={<Home/>} />

@@ -1,11 +1,23 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const GST_Registration = () => {
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
     AOS.init({ once: false, duration: 700, offset: 80 });
   }, []);
+
+  // Ref for the GST registration form section
+  const formSectionRef = useRef(null);
+
+  // Handler to scroll to the form section
+  const scrollToForm = () => {
+    if (formSectionRef.current) {
+      formSectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <div className="bg-neutral-50 min-h-screen">
       {/* Hero Section */}
@@ -17,7 +29,7 @@ const GST_Registration = () => {
           </p>
           <button
             className="mt-6 bg-sky-500 hover:bg-sky-600 text-white font-semibold px-8 py-3 rounded-lg shadow transition-all duration-200 text-base md:text-lg"
-            onClick={() => { /* Add scroll or action here */ }}
+            onClick={scrollToForm}
           >
             Get Started
           </button>
@@ -78,11 +90,17 @@ const GST_Registration = () => {
             <li>✔️ Access to 10+ premium legal agreements tailored for your business</li>
             <li>✔️ Professionally designed invoice templates for GST billing</li>
           </ul>
+          <button
+            className="mt-6 bg-sky-500 hover:bg-sky-600 text-white font-semibold px-8 py-3 rounded-lg shadow transition-all duration-200 text-base md:text-lg"
+            onClick={scrollToForm}
+          >
+            Apply Now
+          </button>
         </div>
       </section>
 
-      {/* GST Registration Form Section */}
-      <section data-aos="fade-up" className="py-10 px-4 flex justify-center">
+      {/* GST Registration Form Section (scroll target) */}
+      <section ref={formSectionRef} data-aos="fade-up" className="py-10 px-4 flex justify-center">
         <div className="w-full max-w-2xl flex flex-col items-center rounded-2xl shadow-lg bg-white border-2 border-sky-100 p-6 md:p-10">
           <div className="w-full bg-sky-500 rounded-t-2xl p-6 mb-6">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-2 text-center">Let's Start Your GST Registration with SmartFile Solutions</h2>
