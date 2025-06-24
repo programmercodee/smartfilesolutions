@@ -161,7 +161,7 @@ const ContactForm = () => {
       data.append('phone', form.phone);
       data.append('category', form.category);
       data.append('query', form.query);
-      const response = await fetch('https://formspree.io/f/xeokzlbw', {
+      const response = await fetch('https://formspree.io/f/movwkwkj', {
         method: 'POST',
         body: data,
         headers: { 'Accept': 'application/json' }

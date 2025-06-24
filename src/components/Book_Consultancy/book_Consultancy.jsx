@@ -112,7 +112,7 @@ const ConsultancyForm = () => {
       data.append('language', formData.language);
       data.append('queries', formData.queries);
       if (formData.image) data.append('image', formData.image);
-      const response = await fetch('https://formspree.io/f/xeokzlbw', {
+      const response = await fetch('https://formspree.io/f/xovwkwwd', {
         method: 'POST',
         body: data,
         headers: { 'Accept': 'application/json' }
@@ -232,7 +232,7 @@ const ConsultancyForm = () => {
           onChange={handleChange}
         />
       </div>
-      <div>
+      {/* <div>
         <label className="block font-medium text-neutral-700 mb-1">Upload Document or Screenshot (optional)</label>
         <input
           type="file"
@@ -241,7 +241,7 @@ const ConsultancyForm = () => {
           className="w-full border border-neutral-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-sky-400"
           onChange={handleChange}
         />
-      </div>
+      </div> */}
       <button
         type="submit"
         disabled={isSubmitting}

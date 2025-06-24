@@ -151,7 +151,7 @@ const GSTReturnForm = () => {
       data.append('phone', formData.phone);
       data.append('whatsapp', formData.whatsapp);
       data.append('returnType', formData.returnType);
-      const response = await fetch('https://formspree.io/f/xeokzlbw', {
+      const response = await fetch('https://formspree.io/f/xgvynyza', {
         method: 'POST',
         body: data,
         headers: { 'Accept': 'application/json' }

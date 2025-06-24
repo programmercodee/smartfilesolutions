@@ -202,7 +202,7 @@ const GSTForm = () => {
       data.append('phone', formData.phone);
       data.append('whatsapp', formData.whatsapp);
       data.append('requirements', formData.requirements);
-      const response = await fetch('https://formspree.io/f/xeokzlbw', {
+      const response = await fetch('https://formspree.io/f/xyzjnjpg', {
         method: 'POST',
         body: data,
         headers: { 'Accept': 'application/json' }

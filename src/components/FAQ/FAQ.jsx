@@ -324,7 +324,7 @@ const FAQ = () => {
     try {
       const data = new FormData();
       Object.entries(form).forEach(([k, v]) => data.append(k, v));
-      const response = await fetch('https://formspree.io/f/xeokzlbw', {
+      const response = await fetch('https://formspree.io/f/xrbkykyy', {
         method: 'POST',
         body: data,
         headers: { 'Accept': 'application/json' }

@@ -185,7 +185,7 @@ const ISOForm = () => {
       data.append('phone', formData.phone);
       data.append('whatsapp', formData.whatsapp);
       data.append('business', formData.business);
-      const response = await fetch('https://formspree.io/f/xeokzlbw', {
+      const response = await fetch('https://formspree.io/f/mdkzwzzj', {
         method: 'POST',
         body: data,
         headers: { 'Accept': 'application/json' }
