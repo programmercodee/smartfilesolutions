@@ -313,7 +313,7 @@ const ITRFilingForm = () => {
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [formData, setFormData] = React.useState({
     name: '',
-    email: '',
+    // email: '',
     phone: '',
     whatsapp: ''
   });
@@ -329,7 +329,7 @@ const ITRFilingForm = () => {
     try {
       const data = new FormData();
       data.append('name', formData.name);
-      data.append('email', formData.email);
+      // data.append('email', formData.email);
       data.append('phone', formData.phone);
       data.append('whatsapp', formData.whatsapp);
       const response = await fetch('https://formspree.io/f/mldnpnne', {
@@ -339,7 +339,7 @@ const ITRFilingForm = () => {
       });
       if (response.ok) {
         alert('Thank you! Your details have been submitted. Our team will contact you soon.');
-        setFormData({ name: '', email: '', phone: '', whatsapp: '' });
+        setFormData({ name: '',phone: '', whatsapp: '' });
       } else {
         throw new Error('Failed to send form');
       }
@@ -364,7 +364,7 @@ const ITRFilingForm = () => {
           onChange={handleChange}
         />
       </div>
-      <div>
+      {/* <div>
         <label className="block font-medium text-neutral-700 mb-1">Email <span className="text-red-500">*</span></label>
         <input
           type="email"
@@ -375,7 +375,7 @@ const ITRFilingForm = () => {
           value={formData.email}
           onChange={handleChange}
         />
-      </div>
+      </div> */}
       <div>
         <label className="block font-medium text-neutral-700 mb-1">Contact Number <span className="text-red-500">*</span></label>
         <input
