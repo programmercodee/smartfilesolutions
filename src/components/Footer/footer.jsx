@@ -225,7 +225,15 @@ const Footer = () => {
         </div>
       </div>
       <div className="text-center text-neutral-400 text-xs mt-8 border-t border-neutral-800 pt-4">
-        © 2020 - 2025 | SmartFileSolutions Private Limited. | All Rights Reserved with Copyright
+        <div className="font-semibold text-base text-neutral-200 mb-1">© 2020 - 2025 | SmartFileSolutions Private Limited.</div>
+        <div className="mb-1">All Rights Reserved with Copyright</div>
+        <div className="mt-3 flex flex-col items-center">
+          <span className="font-semibold text-neutral-300">Website Developed & Maintained By:</span>
+          <a href="https://my-portfolio-mu-eight-11.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-sky-400 hover:underline text-base font-medium mt-1">
+            Brijesh Vishwakarma
+          </a>
+          <span className="text-neutral-400 text-xs mt-1">(Click the name to view developer portfolio)</span>
+        </div>
       </div>
     </footer>
   );
