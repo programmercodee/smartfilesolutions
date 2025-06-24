@@ -5,11 +5,11 @@ const footerLinks = [
   {
     title: 'BUSINESS REGISTRATION',
     links: [
-      { label: 'Pvt Ltd Company Registration', to: '/business/pvt-ltd' },
-      { label: 'OPC Registration', to: '/business/opc' },
-      { label: 'LLP Registration', to: '/business/llp' },
-      { label: 'Partnership Registration', to: '/business/partnership' },
-      { label: 'Proprietorship Registration', to: '/business/proprietorship' },
+      { label: 'Pvt Ltd Company Registration', to: '/business/company/service1' },
+      { label: 'OPC Registration', to: '/business/company/service3' },
+      { label: 'LLP Registration', to: '/business/company/service2' },
+      { label: 'Partnership Registration', to: '/business/firm/service2' },
+      { label: 'Proprietorship Registration', to: '/business/firm/service1' },
     ],
   },
   {
@@ -22,26 +22,26 @@ const footerLinks = [
   {
     title: 'OTHER LEGAL REGISTRATION',
     links: [
-      { label: 'MSME Registration', to: '/legal/msme' },
-      { label: 'IEC Code Registration', to: '/legal/iec' },
-      { label: 'FSSAI Registration', to: '/legal/fssai' },
-      { label: 'Shop Registration', to: '/legal/shop' },
-      { label: 'Gumasta License', to: '/legal/gumasta' },
+      { label: 'MSME Registration', to: '/popular/service5' },
+      // { label: 'IEC Code Registration', to: '/legal/iec' },
+      { label: 'FSSAI Registration', to: '/popular/service8' },
+      // { label: 'Shop Registration', to: '/legal/shop' },
+      // { label: 'Gumasta License', to: '/legal/gumasta' },
     ],
   },
-  {
-    title: 'ANNUAL SERVICE',
-    links: [
-      { label: 'Company Annual Filing', to: '/annual/company' },
-      { label: 'LLP Annual Filing', to: '/annual/llp' },
-      { label: 'Income Tax Return', to: '/annual/itr' },
-    ],
-  },
+  // {
+  //   title: 'ANNUAL SERVICE',
+  //   links: [
+  //     { label: 'Company Annual Filing', to: '/annual/company' },
+  //     { label: 'LLP Annual Filing', to: '/annual/llp' },
+  //     { label: 'Income Tax Return', to: '/annual/itr' },
+  //   ],
+  // },
   {
     title: 'IPR SERVICES',
     links: [
-      { label: 'Trademark Registration', to: '/ipr/trademark' },
-      { label: 'Patent Registration', to: '/ipr/patent' },
+      { label: 'Trademark Registration', to: '/popular/service9' },
+      // { label: 'Patent Registration', to: '/ipr/patent' },
     ],
   },
 ];
@@ -53,16 +53,16 @@ const supportLinks = [
   // { label: 'Blog Guide', to: '/support/blog' },
 ];
 const companyLinks = [
-  { label: 'About Us', to: '/company/about' },
+  { label: 'About Us', to: '#' },
   // { label: 'Join Us : Hiring', to: '/company/hiring' },
-  { label: 'Reviews', to: '/company/reviews' },
+  { label: 'Reviews', to: '#' },
   // { label: 'Affiliate Programme', to: '/company/affiliate' },
   // { label: 'MyOnlineCA Franchise Partner', to: '/company/franchise' },
 ];
 const legalLinks = [
-  { label: 'Terms of Use', to: '/legal/terms' },
-  { label: 'Privacy Policy', to: '/legal/privacy' },
-  { label: 'Refund Policy', to: '/legal/refund' },
+  { label: 'Terms of Use', to: '#' },
+  { label: 'Privacy Policy', to: '#' },
+  { label: 'Refund Policy', to: '#' },
 ];
 
 const socialIcons = [
