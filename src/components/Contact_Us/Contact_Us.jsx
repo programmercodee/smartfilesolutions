@@ -74,7 +74,7 @@ const Contact_Us = () => {
               <h3 className="text-lg font-semibold text-sky-600 mb-2">Support Channels</h3>
               <ul className="list-disc pl-6 text-neutral-700 space-y-1">
                 <li>Email: support@smartfilesolutions.com</li>
-                <li>Phone: +91 12345 67890</li>
+                <li>Phone: +91 9860137669</li>
                 <li>Contact Form: Use the form above for any query</li>
               </ul>
             </div>
@@ -96,13 +96,62 @@ const Contact_Us = () => {
           <h2 className="text-xl md:text-2xl font-bold text-sky-700 mb-4">Contact Information</h2>
           <ul className="space-y-4 text-neutral-700 text-base md:text-lg w-full max-w-lg">
             <li className="flex items-center gap-3"><FaEnvelope className="text-sky-500 w-5 h-5" /><span className="font-semibold">Email:</span> <a href="mailto:support@smartfilesolutions.com" className="text-sky-600 underline">support@smartfilesolutions.com</a></li>
-            <li className="flex items-center gap-3"><FaPhoneAlt className="text-sky-500 w-5 h-5" /><span className="font-semibold">Phone:</span> <a href="tel:+911234567890" className="text-sky-600 underline">+91 12345 67890</a></li>
- 
-            <li className="flex items-center gap-3"><FaMapMarkerAlt className="text-sky-500 w-5 h-5" /><span className="font-semibold">Address:</span> 123, Main Street, Palghar, Maharashtra, India</li>
+            <li className="flex items-center gap-3"><FaPhoneAlt className="text-sky-500 w-5 h-5" /><span className="font-semibold">Phone:</span> <a href="tel:+919860137669" className="text-sky-600 underline">+91 9860137669</a></li>
+
+            <li className="flex gap-3"><FaMapMarkerAlt className="text-sky-500 w-5 h-5" /><span className="font-semibold">Address:</span> Shop 6 , Balchandra Apt , kacheri road palghar, Maharashtra, India</li>
           </ul>
           <div className="mt-8">
             <img src="https://img.freepik.com/free-vector/contact-us-concept-illustration_114360-2299.jpg?w=700" alt="Contact Illustration" className="w-full max-w-xs rounded-xl mx-auto" />
           </div>
+        </div>
+      </section>
+
+      {/* Branches Section */}
+      <section className="py-10 px-4 flex justify-center">
+        <div className="w-full max-w-4xl bg-sky-50 rounded-2xl shadow-md border border-sky-100 p-8 md:p-12 flex flex-col items-center mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold text-sky-700 mb-8 text-center">Our Branches</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+            {/* Pune Branch */}
+            <div className="bg-white rounded-xl shadow p-6 flex flex-col items-center border border-sky-100 hover:shadow-lg transition">
+              <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=400&q=80" alt="Pune - Shaniwar Wada" className="w-32 h-32 object-cover rounded-lg mb-4" />
+              <h3 className="text-lg font-bold text-sky-700 mb-2">Pune Branch</h3>
+              <p className="text-neutral-700 text-center text-sm">Office 101, Business Bay, Yerwada, Pune, Maharashtra, India</p>
+            </div>
+            {/* Mumbai Branch */}
+            <div className="bg-white rounded-xl shadow p-6 flex flex-col items-center border border-sky-100 hover:shadow-lg transition">
+
+              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80" alt="Mumbai - Marine Drive" className="w-32 h-32 object-cover rounded-lg mb-4" />
+              <h3 className="text-lg font-bold text-sky-700 mb-2">Mumbai Branch</h3>
+              <p className="text-neutral-700 text-center text-sm">Shop 6, Balchandra Apt, Kacheri Road, Palghar, Mumbai, Maharashtra, India</p>
+            </div>
+            {/* Gurugram Branch */}
+            <div className="bg-white rounded-xl shadow p-6 flex flex-col items-center border border-sky-100 hover:shadow-lg transition">
+              <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=400&q=80" alt="Gurugram - Cyber City" className="w-32 h-32 object-cover rounded-lg mb-4" />
+              <h3 className="text-lg font-bold text-sky-700 mb-2">Gurugram Branch</h3>
+              <p className="text-neutral-700 text-center text-sm">Unit 12, Cyber City, DLF Phase 2, Gurugram, Haryana, India</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Google Map Section */}
+      <section className="py-10 px-4 flex justify-center">
+        <div className="w-full max-w-4xl bg-white rounded-2xl shadow-md border border-sky-100 p-6 md:p-10 flex flex-col items-center mb-10">
+          <span className="mb-2 px-3 py-1 bg-sky-600 text-white text-xs font-semibold rounded-full uppercase tracking-wide">Main Branch</span>
+          <h2 className="text-xl md:text-2xl font-bold text-sky-700 mb-4 text-center">Find Us on Google Maps</h2>
+          <div className="w-full h-80 rounded-xl overflow-hidden border border-sky-200">
+            <iframe
+              title="SmartFileSolutions Bhalchandra Apartment Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6737.137113942785!2d72.76649467402405!3d19.693620532390742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be71d003e8a91b1%3A0x2ac9ebd7f303eb10!2sBhalchandra%20Apartment!5e0!3m2!1sen!2sin!4v1750850946621!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <a href="https://maps.app.goo.gl/Rq7Tbro6RouSiCNS7" target="_blank" rel="noopener noreferrer" className="mt-4 text-sky-600 underline font-medium">Open in Google Maps</a>
         </div>
       </section>
 
